@@ -11,6 +11,7 @@ from rbsav import RBSav
 from gssav import GSSav
 from crsav import CRSav
 from rssav import RSSav
+from exportableparser import *
 import math
 import os
 items_rb = ['~0',
@@ -7873,6 +7874,231 @@ rb2dex = [201,
  135,
  79,
  6]
+
+pokemon_types_rb = {
+    1: (22, 3),
+    2: (22, 3),
+    3: (22, 3),
+    4: (20, 20),
+    5: (20, 20),
+    6: (20, 2),
+    7: (21, 21),
+    8: (21, 21),
+    9: (21, 21),
+    10: (7, 7),
+    11: (7, 7),
+    12: (7, 2),
+    13: (7, 3),
+    14: (7, 3),
+    15: (7, 3),
+    16: (0, 2),
+    17: (0, 2),
+    18: (0, 2),
+    19: (0, 0),
+    20: (0, 0),
+    21: (0, 2),
+    22: (0, 2),
+    23: (3, 3),
+    24: (3, 3),
+    25: (23, 23),
+    26: (23, 23),
+    27: (4, 4),
+    28: (4, 4),
+    29: (3, 3),
+    30: (3, 3),
+    31: (3, 4),
+    32: (3, 3),
+    33: (3, 3),
+    34: (3, 4),
+    35: (0, 0),
+    36: (0, 0),
+    37: (20, 20),
+    38: (20, 20),
+    39: (0, 0),
+    40: (0, 0),
+    41: (3, 2),
+    42: (3, 2),
+    43: (22, 3),
+    44: (22, 3),
+    45: (22, 3),
+    46: (7, 22),
+    47: (7, 22),
+    48: (7, 3),
+    49: (7, 3),
+    50: (4, 4),
+    51: (4, 4),
+    52: (0, 0),
+    53: (0, 0),
+    54: (21, 21),
+    55: (21, 21),
+    56: (1, 1),
+    57: (1, 1),
+    58: (20, 20),
+    59: (20, 20),
+    60: (21, 21),
+    61: (21, 21),
+    62: (21, 1),
+    63: (24, 24),
+    64: (24, 24),
+    65: (24, 24),
+    66: (1, 1),
+    67: (1, 1),
+    68: (1, 1,),
+    69: (22, 3),
+    70: (22, 3),
+    71: (22, 3),
+    72: (21, 3),
+    73: (21, 3),
+    74: (5, 4),
+    75: (5, 4),
+    76: (5, 4),
+    77: (20, 20),
+    78: (20, 20),
+    79: (21, 24),
+    80: (21, 24),
+    81: (23, 23),
+    82: (23, 23),
+    83: (0, 2),
+    84: (0, 2),
+    85: (0, 2),
+    86: (20, 20),
+    87: (20, 25),
+    88: (3, 3),
+    89: (3, 3),
+    90: (21, 21),
+    91: (21, 24),
+    92: (8, 3),
+    93: (8, 3),
+    94: (8, 3),
+    95: (5, 4),
+    96: (24, 24),
+    97: (24, 24),
+    98: (21, 21),
+    99: (21, 21),
+    100: (23, 23),
+    101: (23, 23),
+    102: (22, 24),
+    103: (22, 24),
+    104: (4, 4),
+    105: (4, 4),
+    106: (1, 1),
+    107: (1, 1),
+    108: (0, 0),
+    109: (3, 3),
+    110: (3, 3),
+    111: (4, 5),
+    112: (4, 5),
+    113: (0, 0),
+    114: (22, 22),
+    115: (0, 0),
+    116: (21, 21),
+    117: (21, 21),
+    118: (21, 21),
+    119: (21, 21),
+    120: (21, 21),
+    121: (21, 24),
+    122: (24, 24),
+    123: (7, 2),
+    124: (25, 24),
+    125: (23, 23),
+    126: (20, 20),
+    127: (7, 7),
+    128: (0, 0),
+    129: (21, 21),
+    130: (21, 2),
+    131: (21, 25),
+    132: (0, 0),
+    133: (0, 0),
+    134: (21, 21),
+    135: (23, 23),
+    136: (20, 20),
+    137: (0, 0),
+    138: (5, 21),
+    139: (5, 21),
+    140: (5, 21),
+    141: (5, 21),
+    142: (5, 2),
+    143: (0, 0),
+    144: (25, 2),
+    145: (23, 2),
+    146: (20, 2),
+    147: (26, 26),
+    148: (26, 26),
+    149: (26, 2),
+    150: (24, 24),
+    151: (24, 24)
+}
+
+new2oldMoveNames_rb = {
+    'Bubble Beam': 61,
+    'Double-Edge': 38,
+    'Double Slap': 3,
+    'High Jump Kick': 136,
+    'Poison Powder': 77,
+    'Sand Attack': 28,
+    'Self-Destruct': 120,
+    'Smokescreen': 108,
+    'Soft-Boiled': 135,
+    'Solar Beam': 76,
+    'Sonic Boom': 49,
+    'Thunder Punch': 9,
+    'Thunder Shock': 84,
+    'Vice Grip': 11
+}
+
+new2oldMoveNames_gs = {
+    'Ancient Power': 246,
+    'Bubble Beam': 61,
+    'Conversion 2': 176,
+    'Double-Edge': 38,
+    'Double Slap': 3,
+    'Dragon Breath': 225,
+    'Dynamic Punch': 223,
+    'Extreme Speed': 245,
+    'Feint Attack': 185,
+    'High Jump Kick': 136,
+    'Lock-On': 199,
+    'Mud-Slap': 189,
+    'Poison Powder': 77,
+    'Sand Attack': 28,
+    'Self-Destruct': 120,
+    'Smokescreen': 108,
+    'Soft-Boiled': 135,
+    'Solar Beam': 76,
+    'Sonic Boom': 49,
+    'Thunder Punch': 9,
+    'Thunder Shock': 84,
+    'Vice Grip': 11
+}
+
+new2oldMoveNames_rs = {
+    'Ancient Power': 246,
+    'Bubble Beam': 61,
+    'Conversion 2': 176,
+    'Double-Edge': 38,
+    'Double Slap': 3,
+    'Dragon Breath': 225,
+    'Dynamic Punch': 223,
+    'Extreme Speed': 245,
+    'Feint Attack': 185,
+    'Feather Dance': 297,
+    'Grass Whistle': 320,
+    'High Jump Kick': 136,
+    'Lock-On': 199,
+    'Mud-Slap': 189,
+    'Poison Powder': 77,
+    'Sand Attack': 28,
+    'Self-Destruct': 120,
+    'Smelling Salts': 265,
+    'Smokescreen': 108,
+    'Soft-Boiled': 135,
+    'Solar Beam': 76,
+    'Sonic Boom': 49,
+    'Thunder Punch': 9,
+    'Thunder Shock': 84,
+    'Vice Grip': 11
+}
+
 items = None
 pokemon = None
 pokemon_lower = None
@@ -7889,7 +8115,7 @@ class PikaSav():
         global pokemon
         global pokedex
         global types
-        file = askopenfilename(filetypes=[('R/B/Y SaveGame', '.sav')])
+        file = askopenfilename(filetypes=[('R/B/Y SaveGame', '.sav;*.sa1')])
         if file:
             sav = RBSav(file, True)
             self.gen = 1
@@ -7912,7 +8138,7 @@ class PikaSav():
         global pokemon
         global pokedex
         global types
-        file = askopenfilename(filetypes=[('G/S SaveGame', '.sav')])
+        file = askopenfilename(filetypes=[('G/S SaveGame', '.sav;*.sa1')])
         if file:
             sav = GSSav(file, True)
             items = items_gs[:]
@@ -7935,7 +8161,7 @@ class PikaSav():
         global pokemon
         global pokedex
         global types
-        file = askopenfilename(filetypes=[('Crystal SaveGame', '.sav')])
+        file = askopenfilename(filetypes=[('Crystal SaveGame', '.sav;*.sa1')])
         if file:
             sav = CRSav(file, True)
             items = items_gs[:]
@@ -7958,7 +8184,7 @@ class PikaSav():
         global pokemon
         global pokedex
         global types
-        file = askopenfilename(filetypes=[('Ruby/Sapphire SaveGame', '.sav')])
+        file = askopenfilename(filetypes=[('Ruby/Sapphire SaveGame', '.sav;*.sa1')])
         if file:
             sav = RSSav(file, 1)
             items = items_rs[:]
@@ -7981,7 +8207,7 @@ class PikaSav():
         global pokemon
         global pokedex
         global types
-        file = askopenfilename(filetypes=[('RBY/GS/Cr/RS SaveGame', '.sav'), ('All files', '*.*')])
+        file = askopenfilename(filetypes=[('RBY/GSC/RS Save Files', '.sav;*.sa1'), ('All files', '*.*')])
         if file:
             sav = RSSav(file)
             if not sav.ok:
@@ -8395,6 +8621,230 @@ class PikaSav():
         fb.write(self.pkm)
         fb.close()
         showinfo('Saved .PKM file', 'Saved %d bytes to %s.' % (len(self.pkm), file), parent=self.pokeedit)
+
+    def save_team(self, t):
+        pokemons = parse_exportable(t)
+        if not pokemons:
+            self.imp.focus_force()
+            showerror('Something went wrong =(', 'Your exportable is not valid. Check it and try again.\nIf you copied'
+                                                 ' correctly, perhaps one of your Pok\xc3\xa9mon\'s nickname has more'
+                                                 ' than 10 characters?')
+            return
+        self.b = None
+        bin_pkm = 0
+        for i in range(len(pokemons)):
+            self.pkm = self.sav.pokemon[bin_pkm]
+            self.p = bin_pkm
+            pkmn = pokemons[i]
+
+            # Species
+            if pkmn['Pokemon'].find('Nidoran-M') != -1:
+                num = 3
+                pkmNo = 29
+            elif pkmn['Pokemon'].find('Nidoran-F') != -1:
+                num = 15
+                pkmNo = 32
+            else:
+                try:
+                    if self.gen == 2:
+                        num = pokemon_lower_gs.index(pkmn['Pokemon'].lower())
+                    elif self.gen == 1:
+                        num = pokemon_lower_rb.index(pkmn['Pokemon'].lower())
+                        for index in range(len(pokedex_rb)):
+                            if pokedex_rb[index].find(pkmn['Pokemon']) != -1:
+                                pkmNo = index
+                                break
+                        else:
+                            continue
+                except ValueError:
+                    continue
+
+            self.pkm = self.sav.pkm_set(self.pkm, 'num', num)
+            self.pkm = self.sav.pkm_set(self.pkm, 'sprite', num)
+            bin_pkm += 1
+
+            if self.gen == 1:
+                num = pkmNo
+
+            # Original trainer name and num
+            otname = self.sav.pkm_get(self.sav.pokemon[0], 'otname')
+            otnum = self.sav.pkm_get(self.sav.pokemon[0], 'otnum')
+            self.pkm = self.sav.pkm_set(self.pkm, 'otname', otname)
+            self.pkm = self.sav.pkm_set(self.pkm, 'otnum', otnum)
+
+            # Nickname
+            if pkmn['Nickname'] == "":
+                if pkmn['Pokemon'].find('Nidoran-M') != -1 or pkmn['Pokemon'].find('Nidoran-F') != -1:
+                    nickname = 'NIDORAN'
+                else:
+                    nickname = pkmn['Pokemon'].upper()
+            else:
+                nickname = pkmn['Nickname']
+            self.pkm = self.sav.pkm_set(self.pkm, 'name', nickname)
+
+            # Level
+            if pkmn['Level'] == "":
+                level = 100
+            else:
+                level = int(pkmn['Level'])
+            self.pkm = self.sav.pkm_set(self.pkm, 'level', level)
+            if self.gen == 1:
+               self.pkm = self.sav.pkm_set(self.pkm, 'curlevel', level)
+
+            # Types
+            if self.gen == 1:
+                self.pkm = self.sav.pkm_set(self.pkm, 'type1', pokemon_types_rb[num][0])
+                self.pkm = self.sav.pkm_set(self.pkm, 'type2', pokemon_types_rb[num][1])
+
+            # Stats
+            stats = ['HP', 'Atk', 'Def', 'SpA', 'Spe']
+            evs = [65535, 65535, 65535, 65535, 65535]
+            ivs = [15, 15, 15, 15, 15, 15]
+            for j in range(5):
+                if pkmn['EVs'][stats[j]] != '' and pkmn['EVs'][stats[j]] != '' < 252:
+                    evs[j] = int(pkmn['EVs'][stats[j]]) ** 2
+                if pkmn['IVs'][stats[j]] != '' and pkmn['IVs'][stats[j]] != '' < 31:
+                    ivs[j] = int(pkmn['IVs'][stats[j]]) / 2
+            self.pkm = self.sav.pkm_set(self.pkm, 'maxhpev', evs[0])
+            self.pkm = self.sav.pkm_set(self.pkm, 'attackev', evs[1])
+            self.pkm = self.sav.pkm_set(self.pkm, 'defenseev', evs[2])
+            self.pkm = self.sav.pkm_set(self.pkm, 'specialev', evs[3])
+            self.pkm = self.sav.pkm_set(self.pkm, 'speedev', evs[4])
+            self.pkm = self.sav.pkm_set(self.pkm, 'attackiv', ivs[1])
+            self.pkm = self.sav.pkm_set(self.pkm, 'defenseiv', ivs[2])
+            self.pkm = self.sav.pkm_set(self.pkm, 'specialiv', ivs[3])
+            self.pkm = self.sav.pkm_set(self.pkm, 'speediv', ivs[4])
+
+            iv_hp = ivs[1] / 2 % 2 * 8 + ivs[2] % 2 * 4 + ivs[4] % 2 * 2 + ivs[3] % 2
+
+            self.pkm = self.sav.pkm_set(self.pkm, 'maxhp', int(10 + level * (base_hp[num] + iv_hp + 50) / 50 +
+                                                               (math.sqrt(evs[0]) / 4)))
+            self.pkm = self.sav.pkm_set(self.pkm, 'hp', int(10 + level * (base_hp[num] + iv_hp + 50) / 50 +
+                                                               (math.sqrt(evs[0]) / 4)))
+            self.pkm = self.sav.pkm_set(self.pkm, 'attack',
+                                        int(5 + level * (base_attack[num] + ivs[1]) / 50 + (math.sqrt(evs[1]) / 4)))
+            self.pkm = self.sav.pkm_set(self.pkm, 'defense',
+                                        int(5 + level * (base_defense[num] + ivs[2]) / 50 + (math.sqrt(evs[2]) / 4)))
+            self.pkm = self.sav.pkm_set(self.pkm, 'speed',
+                                        int(5 + level * (base_speed[num] + ivs[4]) / 50 + (math.sqrt(evs[4]) / 4)))
+            self.pkm = self.sav.pkm_set(self.pkm, 'specialattack',
+                                        int(5 + level * (base_specialattack[num] + ivs[3]) / 50 +
+                                            (math.sqrt(evs[3]) / 4)))
+            self.pkm = self.sav.pkm_set(self.pkm, 'specialdefense',
+                                        int(5 + level * (base_specialdefense[num] + ivs[3]) / 50 +
+                                            (math.sqrt(evs[3]) / 4)))
+            self.pkm = self.sav.pkm_set(self.pkm, 'special',
+                                        int(5 + level * (base_special[num] + ivs[3]) / 50 + (math.sqrt(evs[3]) / 4)))
+
+            # Moves
+            current_move = 0
+            for j in range(len(pkmn['Moves'])):
+                current_move += 1
+                if self.gen == 2 and pkmn['Moves'][j].find('Hidden Power') != -1:
+                    self.pkm = self.sav.pkm_set(self.pkm, 'move%d' % current_move, 237)
+                    self.pkm = self.sav.pkm_set(self.pkm, 'move%dppup' % current_move, 3)
+                    self.pkm = self.sav.pkm_set(self.pkm, 'move%dpp' % current_move, move_pp[237] + 3 * move_pp[237] / 5)
+                else:
+                    if self.gen == 1:
+                        for index in range(len(moves_rb)):
+                            if moves_rb[index].find(pkmn['Moves'][j]) != -1:
+                                self.pkm = self.sav.pkm_set(self.pkm, 'move%d' % current_move, index)
+                                self.pkm = self.sav.pkm_set(self.pkm, 'move%dppup' % current_move, 3)
+                                if move_pp[index] != 40:
+                                    self.pkm = self.sav.pkm_set(self.pkm, 'move%dpp' % current_move,
+                                                                move_pp[index] + 3 * move_pp[index] / 5)
+                                else:
+                                    self.pkm = self.sav.pkm_set(self.pkm, 'move%dpp' % current_move, 61)
+                                break
+                        else:
+                            for key in new2oldMoveNames_rb:
+                                if key.find(pkmn['Moves'][j]) != -1:
+                                    self.pkm = self.sav.pkm_set(self.pkm, 'move%d' % current_move,
+                                                                new2oldMoveNames_rb[key])
+                                    self.pkm = self.sav.pkm_set(self.pkm, 'move%dppup' % current_move, 3)
+                                    self.pkm = self.sav.pkm_set(self.pkm, 'move%dpp' % current_move,
+                                                                move_pp[new2oldMoveNames_rb[key]] +
+                                                                3 * move_pp[new2oldMoveNames_rb[key]] / 5)
+                                    break
+                            else:
+                                current_move -= 1
+
+                    elif self.gen == 2:
+                        for index in range(len(moves_gs)):
+                            if moves_gs[index].find(pkmn['Moves'][j]) != -1:
+                                self.pkm = self.sav.pkm_set(self.pkm, 'move%d' % current_move, index)
+                                self.pkm = self.sav.pkm_set(self.pkm, 'move%dppup' % current_move, 3)
+                                if move_pp[index] != 40:
+                                    self.pkm = self.sav.pkm_set(self.pkm, 'move%dpp' % current_move,
+                                                                move_pp[index] + 3 * move_pp[index] / 5)
+                                else:
+                                    self.pkm = self.sav.pkm_set(self.pkm, 'move%dpp' % current_move, 61)
+                                break
+                        else:
+                            for key in new2oldMoveNames_gs:
+                                if key.find(pkmn['Moves'][j]) != -1:
+                                    self.pkm = self.sav.pkm_set(self.pkm, 'move%d' % current_move,
+                                                                new2oldMoveNames_gs[key])
+                                    self.pkm = self.sav.pkm_set(self.pkm, 'move%dppup' % current_move, 3)
+                                    self.pkm = self.sav.pkm_set(self.pkm, 'move%dpp' % current_move,
+                                                                move_pp[new2oldMoveNames_gs[key]] +
+                                                                3 * move_pp[new2oldMoveNames_gs[key]] / 5)
+                                    break
+                            else:
+                                current_move -= 1
+
+            while current_move < len(pkmn['Moves']):
+                current_move += 1
+                self.pkm = self.sav.pkm_set(self.pkm, 'move%d' % current_move, 0)
+
+            # Item
+            for index in range(len(items_gs)):
+                if unicode(items_gs[index], 'utf-8').find(pkmn['Item']) != -1:
+                    self.pkm = self.sav.pkm_set(self.pkm, 'item', index)
+                    break
+            else:
+                self.pkm = self.sav.pkm_set(self.pkm, 'item', 0)
+
+            # Happiness
+            if pkmn['Happiness'] == "":
+                self.pkm = self.sav.pkm_set(self.pkm, 'happiness', 255)
+            else:
+                self.pkm = self.sav.pkm_set(self.pkm, 'happiness', int(pkmn['Happiness']))
+
+            # Shenanigans
+            if self.gen == 2:
+                self.pkm = self.sav.pkm_set(self.pkm, 'caughttime', 0)
+                self.pkm = self.sav.pkm_set(self.pkm, 'caughtzone', 0)
+                self.pkm = self.sav.pkm_set(self.pkm, 'caughtlevel', 0)
+            else:
+                self.pkm = self.sav.pkm_set(self.pkm, 'catchrate', 0)
+
+            # Experience
+            growth = growthrates[num]
+            exp = int(level ** 3)
+            if growth == 3:
+                exp = int(math.floor(level ** 3 * 1.2 - level * level * 15 + level * 100 - 140))
+            if growth == 4:
+                exp = int(math.floor(level ** 3 * 0.8))
+            if growth == 5:
+                exp = int(math.floor(level ** 3 * 1.25))
+            self.pkm = self.sav.pkm_set(self.pkm, 'exp', exp)
+            self.sav.setpokemon(self.p, self.pkm)
+
+        self.imp.destroy()
+        self.wmdel_pokemon()
+        self.sav.set('pokemoncount', bin_pkm)
+
+        while bin_pkm != 6:
+            self.pkm = self.sav.pokemon[bin_pkm]
+            self.pkm = chr(0) * len(self.pkm)
+            self.pkm = self.sav.pkm_set(self.pkm, 'num', 255)
+            self.pkm = self.sav.pkm_set(self.pkm, 'sprite', 255)
+            self.sav.setpokemon(bin_pkm, self.pkm)
+            bin_pkm += 1
+
+        self.sav.refresh()
+        self.show_pokemon()
 
     def add_fields(self):
         self.frame.grid_forget()
@@ -8924,6 +9374,9 @@ class PikaSav():
             self.pokecount = Entry(self.pokemon, width=7)
             self.pokecount.insert(0, str(self.sav.pokemoncount))
             self.pokecount.grid(row=14, column=3)
+            Label(self.pokemon, text='', font=('Times', 4)).grid(row=15)
+            Button(self.pokemon, text='Import/Export', width=15, command=self.show_import).grid(row=16, column=0,
+                                                                                            columnspan=4)
 
     def show_boxes(self):
         if self.sav == None:
@@ -9015,6 +9468,31 @@ class PikaSav():
         self.boxpokecount.delete(0, END)
         self.boxpokecount.insert(0, pkmcount)
         self.boxedit.focus_force()
+
+    def show_import(self):
+        if self.sav == None:
+            showerror('Something went wrong =(', 'You need to load a .sav first')
+            return
+        self.imp = Toplevel()
+        Label(self.imp, text='', font=('Times', 4)).grid(row=0)
+        team = Text(self.imp, height=30, width=100, font=('Consolas', 10))
+        team.grid(row=1, columnspan=2)
+        Label(self.imp, text='', font=('Times', 4)).grid(row=2)
+        Button(self.imp, text='Save', width=10,
+               command=lambda team=team: self.save_team(team.get('1.0', 'end-1c'))).grid(row=3)
+        Button(self.imp, text="What's this?", width=10,
+               command=lambda team=team: self.help_import()).grid(row=3, column=1)
+        Label(self.imp, text='', font=('Times', 2)).grid(row=4)
+
+    def help_import(self):
+        showinfo("What's this?", 'With this, you can import your teams from simulators such as Pok\xc3\xa9mon Showdown!'
+                                 ' for convenience (very useful if you do Wi-Fi battles). Just paste the exportable,'
+                                 ' click Save and you\'re good to go. If you are having problems exporting, remember'
+                                 ' that Pok\xc3\xa9mon names can\'t be longer than 10 characters. The number of'
+                                 ' whitespaces between each part of the exportable matters, so don\'t change those. You'
+                                 ' can import teams from anywhere, as long as they use the same format as'
+                                 ' Pok\xc3\xa9mon Showdown!. Before clicking Save, remember to backup your party if you'
+                                 ' want to use it later, because it will be wiped out entirely.')
 
     def show_pokeedit(self, p, b = None):
         if self.sav == None:
