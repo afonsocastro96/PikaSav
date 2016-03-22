@@ -105,14 +105,27 @@ def parse_pokemon(pokemon):
 
     ret = parse_first_line(pokemon[0])
     for i in range(len(pokemon) - 4, len(pokemon)):
-        moves.append(pokemon[i][2:-2])
+        if pokemon[i][0] == '-':
+            move = pokemon[i][2:]
+            move = move[::-1]
+            while move[0] == ' ':
+                move = move.replace(' ', '', 1)
+            move = move[::-1]
+            moves.append(move)
+    while len(moves) != 4:
+        moves.append('')
     ret['Moves'] = moves
 
     keys = ['Ability', 'Level', 'Shiny', 'Happiness']
 
     for key in keys:
         if pokemon[line].find(key) != -1:
-            ret[key[:]] = pokemon[line][len(key) + 2:-2]
+            string = pokemon[line][len(key) + 2:]
+            string = string[::-1]
+            while string[0] == ' ':
+                string = string.replace(' ', '', 1)
+            string = string[::-1]
+            ret[key[:]] = string
             line += 1
         else:
             ret[key] = ''
