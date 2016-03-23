@@ -2,16 +2,49 @@ import re
 
 
 def validate_input(exportable):
-    regex = '^([\w -\'.,()?!/:;\[\]]{1,10}( \([\w -\'.,()?!/:;\[\]]{1,10}\))?( \((M|F)\))?( @ [\w -]{1,20})?[ ]*\n' \
+    regex = '^([\w -\'.,()?!/:;\[\]]{1,10}( \([\w -\'.,()?!/:;\[\]]{1,10}\))?( \((M|F)\))?( @ [\w -.]{1,20})?[ ]*\n' \
             'Ability: ([\w ]{1,20})?[ ]*\n(Level: \d{1,3}[ ]*\n)?(Shiny: (Yes|No)[ ]*\n)?(Happiness: \d{1,3}[ ]*\n)?' \
             '(EVs: (\d{1,3} (HP|Atk|Def|SpA|SpD|Spe) \/ ){0,5}(\d{1,3} (HP|Atk|Def|SpA|SpD|Spe))[ ]*\n)?' \
             '((Adamant|Bashful|Bold|Brave|Calm|Careful|Docile|Gentle|Hardy|Hasty|Impish|Jolly|Lax|Lonely|Mild|Modest|' \
             'Naive|Naughty|Quiet|Quirky|Rash|Relaxed|Sassy|Serious|Timid) Nature[ ]*\n)?' \
             '(IVs: (\d{1,2} (HP|Atk|Def|SpA|SpD|Spe) \/ ){0,5}(\d{1,3} (HP|Atk|Def|SpA|SpD|Spe))[ ]*\n)?' \
-            '(- [\w \[\]-]{4,20}[ ]*\n?){1,4}[\n]*){1,6}$'
+            '(- [\w \[\]-]{3,20}[ ]*\n?){1,4}[\n]*){1,6}$'
 
     match = re.match(regex, exportable, 0)
     return match
+
+
+def create_exportable(pokemons):
+    exportable = ''
+    for pokemon in pokemons:
+        pkmn_exportable = pokemon['Nickname'] + ' (' + pokemon['Pokemon'] + ') '
+        if pokemon['Gender'] != 'L':
+            pkmn_exportable += '(' + pokemon['Gender'] + ') '
+        if pokemon['Item'] != '':
+            pkmn_exportable += '@ ' + pokemon['Item']
+        pkmn_exportable += '\nAbility: ' + pokemon['Ability'] + '\n'
+        if pokemon['Level'] != 100:
+            pkmn_exportable += 'Level: ' + str(pokemon['Level']) + '\n'
+        if pokemon['Shiny'] == 'Yes':
+            pkmn_exportable += 'Shiny: Yes\n'
+        if pokemon['Happiness'] != 255:
+            pkmn_exportable += 'Happiness: ' + str(pokemon['Happiness']) + '\n'
+        pkmn_exportable += 'EVs: ' + str(pokemon['EVs'][0]) + ' HP / ' + str(pokemon['EVs'][1]) + ' Atk / ' +\
+                           str(pokemon['EVs'][2]) + ' Def / ' + str(pokemon['EVs'][3]) + ' SpA / ' +\
+                           str(pokemon['EVs'][4]) + ' SpD / ' + str(pokemon['EVs'][5]) + ' Spe\n'
+        if pokemon['Nature'] != '':
+            pkmn_exportable += pokemon['Nature'] + ' Nature\n'
+        pkmn_exportable += 'IVs: ' + str(pokemon['IVs'][0]) + ' HP / ' + str(pokemon['IVs'][1]) + ' Atk / ' +\
+                           str(pokemon['IVs'][2]) + ' Def / ' + str(pokemon['IVs'][3]) + ' SpA / ' +\
+                           str(pokemon['IVs'][4]) + ' SpD / ' + str(pokemon['IVs'][5]) + ' Spe\n'
+
+        for move in pokemon['Moves']:
+            pkmn_exportable += '- ' + move + '\n'
+
+        pkmn_exportable += '\n'
+        exportable += pkmn_exportable
+    exportable += '\n'
+    return exportable
 
 
 def get_lines(p):
@@ -89,8 +122,9 @@ def parse_stats(evs, values_type):
                 i -= 4
             else:
                 i -= 3
-            while evs[i].isdigit():
-                value += evs[i]
+            for _ in range(4):
+                if evs[i].isdigit():
+                    value += evs[i]
                 i += 1
             ret[key] = value
             value = ''
@@ -105,14 +139,27 @@ def parse_pokemon(pokemon):
 
     ret = parse_first_line(pokemon[0])
     for i in range(len(pokemon) - 4, len(pokemon)):
-        moves.append(pokemon[i][2:-2])
+        if pokemon[i][0] == '-':
+            move = pokemon[i][2:]
+            move = move[::-1]
+            while move[0] == ' ':
+                move = move.replace(' ', '', 1)
+            move = move[::-1]
+            moves.append(move)
+    while len(moves) != 4:
+        moves.append('')
     ret['Moves'] = moves
 
     keys = ['Ability', 'Level', 'Shiny', 'Happiness']
 
     for key in keys:
         if pokemon[line].find(key) != -1:
-            ret[key[:]] = pokemon[line][len(key) + 2:-2]
+            string = pokemon[line][len(key) + 2:]
+            string = string[::-1]
+            while string[0] == ' ':
+                string = string.replace(' ', '', 1)
+            string = string[::-1]
+            ret[key[:]] = string
             line += 1
         else:
             ret[key] = ''

@@ -7,6 +7,7 @@ from Tkinter import *
 from Tix import *
 from tkFileDialog import *
 from tkMessageBox import *
+from random import randint
 from rbsav import RBSav
 from gssav import GSSav
 from crsav import CRSav
@@ -5501,6 +5502,166 @@ growthrates = [205,
  5,
  5,
  3,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 3,
+ 3,
+ 3,
+ 3,
+ 3,
+ 3,
+ 3,
+ 3,
+ 3,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 3,
+ 3,
+ 3,
+ 3,
+ 3,
+ 3,
+ 1,
+ 1,
+ 1,
+ 3,
+ 3,
+ 2,
+ 2,
+ 4,
+ 0,
+ 0,
+ 0,
+ 0,
+ 2,
+ 2,
+ 4,
+ 4,
+ 3,
+ 0,
+ 0,
+ 0,
+ 0,
+ 3,
+ 0,
+ 0,
+ 4,
+ 2,
+ 2,
+ 1,
+ 1,
+ 5,
+ 5,
+ 3,
+ 3,
+ 3,
+ 2,
+ 2,
+ 5,
+ 5,
+ 0,
+ 0,
+ 3,
+ 3,
+ 3,
+ 3,
+ 3,
+ 0,
+ 0,
+ 4,
+ 4,
+ 4,
+ 4,
+ 4,
+ 0,
+ 0,
+ 4,
+ 0,
+ 0,
+ 1,
+ 1,
+ 0,
+ 4,
+ 4,
+ 3,
+ 5,
+ 5,
+ 5,
+ 2,
+ 2,
+ 5,
+ 3,
+ 3,
+ 3,
+ 1,
+ 1,
+ 1,
+ 3,
+ 4,
+ 4,
+ 2,
+ 1,
+ 5,
+ 5,
+ 5,
+ 5,
+ 0,
+ 1,
+ 2,
+ 1,
+ 1,
+ 1,
+ 1,
+ 5,
+ 5,
+ 5,
+ 5,
+ 5,
+ 5,
+ 5,
+ 5,
+ 5,
+ 5,
+ 5,
+ 5,
+ 5,
+ 5,
+ 5,
+ 5,
+ 5,
+ 5,
+ 5,
+ 4,
  255,
  15,
  224,
@@ -5761,9 +5922,166 @@ base_hp = [255,
  255,
  255,
  255,
- 255]
+ 255,
+ 255,
+ 255,
+ 255,
+ 255,
+ 255,
+ 255,
+ 255,
+ 255,
+ 255,
+ 255,
+ 255,
+ 255,
+ 255,
+ 255,
+ 255,
+ 255,
+ 255,
+ 255,
+ 255,
+ 255,
+ 40,
+ 50,
+ 70,
+ 45,
+ 60,
+ 80,
+ 50,
+ 70,
+ 100,
+ 35,
+ 70,
+ 38,
+ 78,
+ 45,
+ 50,
+ 60,
+ 50,
+ 60,
+ 40,
+ 60,
+ 80,
+ 40,
+ 70,
+ 90,
+ 31,
+ 61,
+ 1,
+ 40,
+ 60,
+ 60,
+ 60,
+ 60,
+ 40,
+ 60,
+ 40,
+ 70,
+ 130,
+ 170,
+ 50,
+ 70,
+ 60,
+ 40,
+ 60,
+ 30,
+ 70,
+ 50,
+ 50,
+ 110,
+ 43,
+ 43,
+ 63,
+ 20,
+ 95,
+ 45,
+ 70,
+ 45,
+ 50,
+ 80,
+ 72,
+ 144,
+ 40,
+ 70,
+ 60,
+ 70,
+ 70,
+ 90,
+ 110,
+ 50,
+ 70,
+ 50,
+ 80,
+ 70,
+ 70,
+ 50,
+ 60,
+ 80,
+ 60,
+ 60,
+ 50,
+ 30,
+ 60,
+ 45,
+ 75,
+ 95,
+ 20,
+ 40,
+ 50,
+ 60,
+ 80,
+ 150,
+ 70,
+ 100,
+ 99,
+ 64,
+ 84,
+ 104,
+ 35,
+ 55,
+ 55,
+ 65,
+ 44,
+ 64,
+ 73,
+ 73,
+ 100,
+ 50,
+ 60,
+ 70,
+ 70,
+ 65,
+ 65,
+ 66,
+ 86,
+ 45,
+ 75,
+ 28,
+ 38,
+ 68,
+ 45,
+ 65,
+ 95,
+ 40,
+ 60,
+ 80,
+ 80,
+ 80,
+ 80,
+ 100,
+ 100,
+ 105,
+ 80,
+ 80,
+ 100,
+ 50,
+ 65,
+ 255
+ ]
 base_attack = [255,
- 49,
+  49,
  62,
  82,
  52,
@@ -6017,7 +6335,163 @@ base_attack = [255,
  255,
  255,
  255,
- 255]
+ 255,
+ 255,
+ 255,
+ 255,
+ 255,
+ 255,
+ 255,
+ 255,
+ 255,
+ 255,
+ 255,
+ 255,
+ 255,
+ 255,
+ 255,
+ 255,
+ 255,
+ 255,
+ 255,
+ 255,
+ 255,
+ 255,
+ 45,
+ 65,
+ 85,
+ 60,
+ 85,
+ 120,
+ 70,
+ 85,
+ 110,
+ 55,
+ 90,
+ 30,
+ 70,
+ 45,
+ 35,
+ 70,
+ 35,
+ 50,
+ 30,
+ 50,
+ 70,
+ 40,
+ 70,
+ 100,
+ 45,
+ 90,
+ 90,
+ 55,
+ 85,
+ 40,
+ 130,
+ 60,
+ 30,
+ 50,
+ 30,
+ 60,
+ 70,
+ 90,
+ 45,
+ 65,
+ 90,
+ 40,
+ 70,
+ 45,
+ 85,
+ 75,
+ 48,
+ 78,
+ 30,
+ 80,
+ 120,
+ 15,
+ 60,
+ 90,
+ 120,
+ 100,
+ 70,
+ 100,
+ 60,
+ 120,
+ 45,
+ 75,
+ 60,
+ 100,
+ 40,
+ 60,
+ 80,
+ 85,
+ 115,
+ 50,
+ 80,
+ 55,
+ 95,
+ 20,
+ 25,
+ 45,
+ 50,
+ 40,
+ 85,
+ 40,
+ 60,
+ 40,
+ 70,
+ 23,
+ 40,
+ 70,
+ 60,
+ 60,
+ 80,
+ 160,
+ 43,
+ 73,
+ 68,
+ 51,
+ 71,
+ 91,
+ 64,
+ 104,
+ 84,
+ 130,
+ 75,
+ 115,
+ 100,
+ 115,
+ 90,
+ 70,
+ 90,
+ 110,
+ 70,
+ 73,
+ 47,
+ 41,
+ 81,
+ 95,
+ 125,
+ 25,
+ 35,
+ 65,
+ 75,
+ 95,
+ 135,
+ 55,
+ 75,
+ 135,
+ 100,
+ 50,
+ 75,
+ 100,
+ 150,
+ 150,
+ 80,
+ 90,
+ 100,
+ 150,
+ 50]
 base_defense = [255,
  49,
  63,
@@ -6273,7 +6747,164 @@ base_defense = [255,
  255,
  255,
  255,
- 255]
+ 255,
+ 255,
+ 255,
+ 255,
+ 255,
+ 255,
+ 255,
+ 255,
+ 255,
+ 255,
+ 255,
+ 255,
+ 255,
+ 255,
+ 255,
+ 255,
+ 255,
+ 255,
+ 255,
+ 255,
+ 255,
+ 255,
+ 35,
+45,
+65,
+40,
+60,
+70,
+50,
+70,
+90,
+35,
+70,
+41,
+61,
+35,
+55,
+50,
+55,
+70,
+30,
+50,
+70,
+50,
+40,
+60,
+90,
+45,
+45,
+30,
+60,
+60,
+80,
+60,
+30,
+100,
+32,
+62,
+35,
+45,
+45,
+65,
+70,
+55,
+105,
+135,
+140,
+75,
+43,
+73,
+55,
+65,
+85,
+20,
+79,
+20,
+40,
+45,
+50,
+80,
+30,
+60,
+40,
+60,
+40,
+70,
+50,
+70,
+90,
+40,
+60,
+50,
+80,
+65,
+85,
+40,
+35,
+65,
+40,
+50,
+85,
+55,
+75,
+60,
+90,
+48,
+90,
+130,
+45,
+60,
+80,
+100,
+53,
+83,
+83,
+23,
+43,
+63,
+85,
+105,
+105,
+60,
+35,
+65,
+60,
+60,
+130,
+100,
+140,
+180,
+70,
+55,
+55,
+77,
+97,
+50,
+100,
+25,
+35,
+65,
+60,
+100,
+80,
+80,
+100,
+130,
+200,
+100,
+150,
+90,
+140,
+90,
+90,
+80,
+100,
+50,
+70
+]
 base_speed = [255,
  45,
  60,
@@ -6529,7 +7160,164 @@ base_speed = [255,
  255,
  255,
  255,
- 255]
+ 255,
+ 255,
+ 255,
+ 255,
+ 255,
+ 255,
+ 255,
+ 255,
+ 255,
+ 255,
+ 255,
+ 255,
+ 255,
+ 255,
+ 255,
+ 255,
+ 255,
+ 255,
+ 255,
+ 255,
+ 255,
+ 255,
+ 70,
+95,
+120,
+45,
+55,
+80,
+40,
+50,
+60,
+35,
+70,
+60,
+100,
+20,
+15,
+65,
+15,
+65,
+30,
+50,
+70,
+30,
+60,
+80,
+40,
+160,
+40,
+85,
+125,
+35,
+70,
+60,
+85,
+65,
+65,
+60,
+60,
+60,
+50,
+70,
+40,
+55,
+75,
+30,
+20,
+50,
+60,
+60,
+97,
+35,
+55,
+80,
+81,
+65,
+95,
+10,
+70,
+100,
+25,
+50,
+65,
+105,
+35,
+40,
+25,
+45,
+65,
+35,
+55,
+50,
+80,
+70,
+70,
+20,
+60,
+80,
+95,
+95,
+50,
+60,
+80,
+50,
+80,
+23,
+25,
+25,
+65,
+30,
+90,
+100,
+40,
+55,
+51,
+28,
+48,
+68,
+32,
+52,
+52,
+75,
+45,
+65,
+65,
+90,
+55,
+30,
+40,
+50,
+70,
+85,
+85,
+23,
+43,
+75,
+45,
+40,
+50,
+80,
+50,
+50,
+100,
+30,
+50,
+70,
+50,
+50,
+50,
+90,
+90,
+95,
+110,
+110,
+100,
+150,
+65
+]
 base_specialattack = [255,
  65,
  80,
@@ -6785,7 +7573,164 @@ base_specialattack = [255,
  255,
  255,
  255,
- 255]
+ 255,
+ 255,
+ 255,
+ 255,
+ 255,
+ 255,
+ 255,
+ 255,
+ 255,
+ 255,
+ 255,
+ 255,
+ 255,
+ 255,
+ 255,
+ 255,
+ 255,
+ 255,
+ 255,
+ 255,
+ 255,
+ 255,
+65,
+85,
+105,
+70,
+85,
+110,
+50,
+60,
+85,
+30,
+60,
+30,
+50,
+20,
+25,
+100,
+25,
+50,
+40,
+60,
+90,
+30,
+60,
+90,
+30,
+50,
+30,
+30,
+50,
+40,
+60,
+60,
+55,
+85,
+50,
+80,
+70,
+90,
+35,
+55,
+60,
+40,
+70,
+45,
+85,
+65,
+46,
+76,
+40,
+50,
+90,
+10,
+100,
+65,
+95,
+45,
+50,
+80,
+20,
+40,
+65,
+105,
+65,
+105,
+55,
+75,
+95,
+85,
+115,
+50,
+80,
+95,
+55,
+20,
+70,
+90,
+85,
+75,
+55,
+40,
+60,
+40,
+70,
+23,
+30,
+60,
+100,
+35,
+55,
+95,
+43,
+73,
+72,
+51,
+71,
+91,
+74,
+94,
+114,
+75,
+63,
+83,
+100,
+60,
+45,
+40,
+50,
+60,
+70,
+47,
+73,
+61,
+81,
+40,
+70,
+45,
+65,
+125,
+40,
+60,
+110,
+35,
+55,
+95,
+50,
+100,
+75,
+150,
+100,
+150,
+110,
+130,
+100,
+150,
+95
+ ]
 base_specialdefense = [255,
  65,
  80,
@@ -7041,7 +7986,164 @@ base_specialdefense = [255,
  255,
  255,
  255,
- 255]
+ 255,
+ 255,
+ 255,
+ 255,
+ 255,
+ 255,
+ 255,
+ 255,
+ 255,
+ 255,
+ 255,
+ 255,
+ 255,
+ 255,
+ 255,
+ 255,
+ 255,
+ 255,
+ 255,
+ 255,
+ 255,
+ 255,
+ 55,
+65,
+85,
+50,
+60,
+70,
+50,
+70,
+90,
+30,
+60,
+41,
+61,
+30,
+25,
+50,
+25,
+90,
+50,
+70,
+100,
+30,
+40,
+60,
+30,
+50,
+30,
+30,
+50,
+60,
+60,
+60,
+30,
+70,
+52,
+82,
+35,
+45,
+35,
+55,
+120,
+70,
+120,
+90,
+70,
+65,
+41,
+71,
+65,
+35,
+55,
+55,
+125,
+20,
+40,
+45,
+50,
+80,
+30,
+60,
+40,
+60,
+45,
+75,
+50,
+70,
+90,
+40,
+60,
+50,
+80,
+85,
+65,
+40,
+80,
+110,
+75,
+85,
+55,
+55,
+75,
+75,
+105,
+48,
+90,
+130,
+80,
+35,
+55,
+65,
+53,
+83,
+87,
+23,
+43,
+73,
+55,
+75,
+75,
+60,
+33,
+63,
+60,
+60,
+65,
+40,
+50,
+60,
+70,
+75,
+75,
+87,
+107,
+50,
+80,
+35,
+55,
+115,
+30,
+50,
+80,
+60,
+80,
+90,
+100,
+200,
+150,
+140,
+90,
+90,
+130,
+110,
+100,
+50,
+80
+]
 base_special = [255,
  65,
  80,
@@ -7298,6 +8400,7 @@ base_special = [255,
  255,
  255,
  255]
+
 move_pp = [0,
  35,
  25,
@@ -7550,10 +8653,109 @@ move_pp = [0,
  15,
  15,
  10,
+ 10,
+ 10,
+ 10,
+ 10,
+ 10,
+ 10,
+ 10,
+ 15,
+ 15,
+ 15,
+ 10,
+ 20,
+ 20,
+ 10,
  20,
  20,
  20,
- 20]
+ 20,
+ 20,
+ 10,
+ 10,
+ 10,
+ 20,
+ 20,
+ 5,
+ 15,
+ 10,
+ 10,
+ 15,
+ 10,
+ 20,
+ 5,
+ 5,
+ 10,
+ 10,
+ 20,
+ 5,
+ 10,
+ 20,
+ 10,
+ 20,
+ 20,
+ 20,
+ 5,
+ 5,
+ 15,
+ 20,
+ 10,
+ 15,
+ 20,
+ 15,
+ 10,
+ 10,
+ 15,
+ 10,
+ 5,
+ 5,
+ 10,
+ 15,
+ 10,
+ 5,
+ 20,
+ 25,
+ 5,
+ 40,
+ 10,
+ 5,
+ 40,
+ 15,
+ 20,
+ 20,
+ 5,
+ 15,
+ 20,
+ 30,
+ 15,
+ 15,
+ 5,
+ 10,
+ 30,
+ 20,
+ 30,
+ 15,
+ 5,
+ 40,
+ 15,
+ 5,
+ 20,
+ 5,
+ 15,
+ 25,
+ 40,
+ 15,
+ 20,
+ 15,
+ 20,
+ 15,
+ 20,
+ 10,
+ 20,
+ 20,
+ 5,
+ 5]
 hidden_power_ivs = [[12,
   12,
   15,
@@ -7618,6 +8820,25 @@ hidden_power_ivs = [[12,
   15,
   15,
   15]]
+hidden_power_ivs_rs = [
+# Hp, Atk, Def, SpA, SpD, Spe
+[31, 31, 30, 30, 30, 30],
+[30, 30, 30, 30, 30, 31],
+[31, 31, 30, 30, 30, 31],
+[31, 31, 31, 30, 30, 31],
+[31, 31, 30, 31, 30, 30],
+[31, 30, 30, 31, 30, 31],
+[31, 31, 30, 31, 30, 31],
+[31, 31, 31, 31, 30, 31],
+[31, 30, 31, 30, 31, 30],
+[31, 30, 30, 30, 31, 31],
+[31, 30, 31, 30, 31, 31],
+[31, 31, 31, 30, 31, 31],
+[31, 30, 31, 31, 31, 30],
+[31, 30, 30, 31, 31, 31],
+[31, 30, 31, 31, 31, 31],
+[31, 31, 31, 31, 31, 31]
+]
 rb2dex = [201,
  112,
  115,
@@ -8099,6 +9320,699 @@ new2oldMoveNames_rs = {
     'Vice Grip': 11
 }
 
+natures = [
+ 'Hardy (Neutral)',
+ 'Lonely (+Atk, -Def)',
+ 'Brave (+Atk, -Spe)',
+ 'Adamant (+Atk, -SpA)',
+ 'Naughty (+Atk, -SpD)',
+ 'Bold (+Def, -Atk)',
+ 'Docile (Neutral)',
+ 'Relaxed (+Def, -Spe)',
+ 'Impish (+Def, -SpA)',
+ 'Lax (+Def, -SpD)',
+ 'Timid (+Spe, -Atk)',
+ 'Hasty (+Spe, -Def)',
+ 'Serious (Neutral)',
+ 'Jolly (+Spe, -SpA)',
+ 'Naive (+Spe, -SpD)',
+ 'Modest (+SpA, -Atk) ',
+ 'Mild (+SpA, -Def)',
+ 'Quiet (+SpA, -Spe)',
+ 'Bashful (Neutral)',
+ 'Rash (+SpA, -Spd)',
+ 'Calm (+SpD, -Atk)',
+ 'Gentle (+SpD, -Def)',
+ 'Sassy (+SpD, -Spe)',
+ 'Careful (+SpD, Spe)',
+ 'Quirky (SpD, SpA)'
+]
+
+natures_atk = [
+1,
+1.1,
+1.1,
+1.1,
+1.1,
+0.9,
+1,
+1,
+1,
+1,
+0.9,
+1,
+1,
+1,
+1,
+0.9,
+1,
+1,
+1,
+1,
+0.9,
+1,
+1,
+1,
+1
+]
+
+natures_def = [
+1,
+0.9,
+1,
+1,
+1,
+1.1,
+1,
+1.1,
+1.1,
+1.1,
+1,
+0.9,
+1,
+1,
+1,
+1,
+0.9,
+1,
+1,
+1,
+1,
+0.9,
+1,
+1,
+1
+]
+
+natures_spatk = [
+1,
+1,
+1,
+0.9,
+1,
+1,
+1,
+1,
+0.9,
+1,
+1,
+1,
+1,
+0.9,
+1,
+1.1,
+1.1,
+1.1,
+1,
+1.1,
+1,
+1,
+1,
+0.9,
+1
+]
+
+natures_spdef = [
+1,
+1,
+1,
+1,
+0.9,
+1,
+1,
+1,
+1,
+0.9,
+1,
+1,
+1,
+1,
+0.9,
+1,
+1,
+1,
+1,
+0.9,
+1.1,
+1.1,
+1.1,
+1.1,
+1
+]
+
+natures_spe = [
+1,
+1,
+0.9,
+1,
+1,
+1,
+1,
+0.9,
+1,
+1,
+1.1,
+1.1,
+1,
+1.1,
+1.1,
+1,
+1,
+0.9,
+1,
+1,
+1,
+1,
+0.9,
+1,
+1
+]
+
+gender_rate = {
+ 32 : 0,
+ 33 : 0,
+ 34 : 0,
+ 106 : 0,
+ 107 : 0,
+ 128 : 0,
+ 236 : 0,
+ 237 : 0,
+ 386 : 0,
+ 408 : 0,
+ 1 : 31,
+ 2 : 31,
+ 3 : 31,
+ 4 : 31,
+ 5 : 31,
+ 6 : 31,
+ 7 : 31,
+ 8 : 31,
+ 9 : 31,
+ 133 : 31,
+ 134 : 31,
+ 135 : 31,
+ 136 : 31,
+ 138 : 31,
+ 139 : 31,
+ 140 : 31,
+ 141 : 31,
+ 142 : 31,
+ 143 : 31,
+ 152 : 31,
+ 153 : 31,
+ 154 : 31,
+ 155 : 31,
+ 156 : 31,
+ 157 : 31,
+ 158 : 31,
+ 159 : 31,
+ 160 : 31,
+ 175 : 31,
+ 176 : 31,
+ 196 : 31,
+ 197 : 31,
+ 277 : 31,
+ 278 : 31,
+ 279 : 31,
+ 280 : 31,
+ 281 : 31,
+ 282 : 31,
+ 283 : 31,
+ 284 : 31,
+ 285 : 31,
+ 381 : 31,
+ 388 : 31,
+ 389 : 31,
+ 390 : 31,
+ 391 : 31,
+ 58 : 63,
+ 59 : 63,
+ 63 : 63,
+ 64 : 63,
+ 65 : 63,
+ 66 : 63,
+ 67 : 63,
+ 68 : 63,
+ 125 : 63,
+ 126 : 63,
+ 239 : 63,
+ 240 : 63,
+ 335 : 63,
+ 336 : 63,
+ 35 : 191,
+ 36 : 191,
+ 37 : 191,
+ 38 : 191,
+ 39 : 191,
+ 40 : 191,
+ 173 : 191,
+ 174 : 191,
+ 209 : 191,
+ 210 : 191,
+ 222 : 191,
+ 315 : 191,
+ 316 : 191,
+ 325 : 191,
+ 350 : 191,
+ 29 : 254,
+ 30 : 254,
+ 31 : 254,
+ 113 : 254,
+ 115 : 254,
+ 124 : 254,
+ 238 : 254,
+ 241 : 254,
+ 242 : 254,
+ 387 : 254,
+ 407 : 254,
+ 81 : 255,
+ 82 : 255,
+ 100 : 255,
+ 101 : 255,
+ 120 : 255,
+ 121 : 255,
+ 132 : 255,
+ 137 : 255,
+ 144 : 255,
+ 145 : 255,
+ 146 : 255,
+ 150 : 255,
+ 151 : 255,
+ 201 : 255,
+ 233 : 255,
+ 243 : 255,
+ 244 : 255,
+ 245 : 255,
+ 249 : 255,
+ 250 : 255,
+ 251 : 255,
+ 303 : 255,
+ 348 : 255,
+ 349 : 255,
+ 318 : 255,
+ 319 : 255,
+ 398 : 255,
+ 399 : 255,
+ 400 : 255,
+ 401 : 255,
+ 402 : 255,
+ 403 : 255,
+ 404 : 255,
+ 405 : 255,
+ 406 : 255,
+ 409 : 255,
+ 410 : 255
+}
+
+pokemon_abilities = {
+ 1 : ('Overgrow'),
+ 2 : ('Overgrow'),
+ 3 : ('Overgrow'),
+ 4 : ('Blaze'),
+ 5 : ('Blaze'),
+ 6 : ('Blaze'),
+ 7 : ('Torrent'),
+ 8 : ('Torrent'),
+ 9 : ('Torrent'),
+ 10 : ('Shield Dust'),
+ 11 : ('Shed Skin'),
+ 12 : ('Compoundeyes'),
+ 13 : ('Shield Dust'),
+ 14 : ('Shed Skin'),
+ 15 : ('Swarm'),
+ 16 : ('Keen Eye'),
+ 17 : ('Keen Eye'),
+ 18 : ('Keen Eye'),
+ 19 : ('Run Away', 'Guts'),
+ 20 : ('Run Away', 'Guts'),
+ 21 : ('Keen Eye'),
+ 22 : ('Keen Eye'),
+ 23 : ('Intimidate', 'Shed Skin'),
+ 24 : ('Intimidate', 'Shed Skin'),
+ 25 : ('Static'),
+ 26 : ('Static'),
+ 27 : ('Sand Veil'),
+ 28 : ('Sand Veil'),
+ 29 : ('Poison Point'),
+ 30 : ('Poison Point'),
+ 31 : ('Poison Point'),
+ 32 : ('Poison Point'),
+ 33 : ('Poison Point'),
+ 34 : ('Poison Point'),
+ 35 : ('Cute Charm'),
+ 36 : ('Cute Charm'),
+ 37 : ('Flash Fire'),
+ 38 : ('Flash Fire'),
+ 39 : ('Cute Charm'),
+ 40 : ('Cute Charm'),
+ 41 : ('Inner Focus'),
+ 42 : ('Inner Focus'),
+ 43 : ('Chlorophyll'),
+ 44 : ('Chlorophyll'),
+ 45 : ('Chlorophyll'),
+ 46 : ('Effect Spore'),
+ 47 : ('Effect Spore'),
+ 48 : ('Compoundeyes'),
+ 49 : ('Shield Dust'),
+ 50 : ('Sand Veil', 'Arena Trap'),
+ 51 : ('Sand Veil', 'Arena Trap'),
+ 52 : ('Pickup'),
+ 53 : ('Limber'),
+ 54 : ('Damp' ,'Cloud Nine'),
+ 55 : ('Damp' ,'Cloud Nine'),
+ 56 : ('Vital Spirit'),
+ 57 : ('Vital Spirit'),
+ 58 : ('Intimidate', 'Flash Fire'),
+ 59 : ('Intimidate', 'Flash Fire'),
+ 60 : ('Water Absorb', 'Damp'),
+ 61 : ('Water Absorb', 'Damp'),
+ 62 : ('Water Absorb', 'Damp'),
+ 63 : ('Synchronize', 'Inner Focus'),
+ 64 : ('Synchronize', 'Inner Focus'),
+ 65 : ('Synchronize', 'Inner Focus'),
+ 66 : ('Guts'),
+ 67 : ('Guts'),
+ 68 : ('Guts'),
+ 69 : ('Chlorophyll'),
+ 70 : ('Chlorophyll'),
+ 71 : ('Chlorophyll'),
+ 72 : ('Clear Body', 'Liquid Ooze'),
+ 73 : ('Clear Body', 'Liquid Ooze'),
+ 74 : ('Rock Head', 'Sturdy'),
+ 75 : ('Rock Head', 'Sturdy'),
+ 76 : ('Rock Head', 'Sturdy'),
+ 77 : ('Run Away', 'Flash Fire'),
+ 78 : ('Run Away', 'Flash Fire'),
+ 79 : ('Oblivious', 'Own Tempo'),
+ 80 : ('Oblivious', 'Own Tempo'),
+ 81 : ('Magnet Pull', 'Sturdy'),
+ 82 : ('Magnet Pull', 'Sturdy'),
+ 83 : ('Keen Eye', 'Inner Focus'),
+ 84 : ('Run Away', 'Early Bird'),
+ 85 : ('Run Away', 'Early Bird'),
+ 86 : ('Thick Fat'),
+ 87 : ('Thick Fat'),
+ 88 : ('Stench', 'Sticky Hold'),
+ 89 : ('Stench', 'Sticky Hold'),
+ 90 : ('Shell Armor'),
+ 91 : ('Shell Armor'),
+ 92 : ('Levitate'),
+ 93 : ('Levitate'),
+ 94 : ('Levitate'),
+ 95 : ('Rock Head', 'Sturdy'),
+ 96 : ('Insomnia'),
+ 97 : ('Insomnia'),
+ 98 : ('Hyper Cutter', 'Shell Armor'),
+ 99 : ('Hyper Cutter', 'Shell Armor'),
+ 100 : ('Soundproof', 'Static'),
+ 101 : ('Soundproof', 'Static'),
+ 102 : ('Chlorophyll'),
+ 103 : ('Chlorophyll'),
+ 104 : ('Rock Head', 'Lightingrod'),
+ 105 : ('Rock Head', 'Lightingrod'),
+ 106 : ('Limber'),
+ 107 : ('Keen Eye'),
+ 108 : ('Own Tempo', 'Oblivious'),
+ 109 : ('Levitate'),
+ 110 : ('Levitate'),
+ 111 : ('Lightingrod', 'Rock Head'),
+ 112 : ('Lightingrod', 'Rock Head'),
+ 113 : ('Natural Cure', 'Serene Grace'),
+ 114 : ('Chlorophyll'),
+ 115 : ('Early Bird'),
+ 116 : ('Swift Swim'),
+ 117 : ('Poison Point'),
+ 118 : ('Swift Swim', 'Water Veil'),
+ 119 : ('Swift Swim', 'Water Veil'),
+ 120 : ('Illuminate', 'Natural Cure'),
+ 121 : ('Illuminate', 'Natural Cure'),
+ 122 : ('Soundproof'),
+ 123 : ('Swarm'),
+ 124 : ('Oblivious'),
+ 125 : ('Static'),
+ 126 : ('Flame Body'),
+ 127 : ('Hyper Cutter'),
+ 128 : ('Intimidate'),
+ 129 : ('Swift Swim'),
+ 130 : ('Intimidate'),
+ 131 : ('Water Absorb', 'Shell Armor'),
+ 132 : ('Limber'),
+ 133 : ('Run Away'),
+ 134 : ('Water Absorb'),
+ 135 : ('Volt Absorb'),
+ 136 : ('Flash Fire'),
+ 137 : ('Trace'),
+ 138 : ('Swift Swim', 'Shell Armor'),
+ 139 : ('Swift Swim', 'Shell Armor'),
+ 140 : ('Swift Swim', 'Shell Armor'),
+ 141 : ('Swift Swim', 'Shell Armor'),
+ 142 : ('Rock Head', 'Pressure'),
+ 143 : ('Immunity', 'Thick Fat'),
+ 144 : ('Pressure'),
+ 145 : ('Pressure'),
+ 146 : ('Pressure'),
+ 147 : ('Shed Skin'),
+ 148 : ('Shed Skin'),
+ 149 : ('Inner Focus'),
+ 150 : ('Pressure'),
+ 151 : ('Synchronize'),
+ 152 : ('Overgrow'),
+ 153 : ('Overgrow'),
+ 154 : ('Overgrow'),
+ 155 : ('Blaze'),
+ 156 : ('Blaze'),
+ 157 : ('Blaze'),
+ 158 : ('Torrent'),
+ 159 : ('Torrent'),
+ 160 : ('Torrent'),
+ 161 : ('Run Away', 'Keen Eye'),
+ 162 : ('Run Away', 'Keen Eye'),
+ 163 : ('Insomnia', 'Keen Eye'),
+ 164 : ('Insomnia', 'Keen Eye'),
+ 165 : ('Swarm', 'Early Bird'),
+ 166 : ('Swarm', 'Early Bird'),
+ 167 : ('Swarm', 'Insomnia'),
+ 168 : ('Swarm', 'Insomnia'),
+ 169 : ('Inner Focus'),
+ 170 : ('Volt Absorb', 'Illuminate'),
+ 171 : ('Volt Absorb', 'Illuminate'),
+ 172 : ('Static'),
+ 172 : ('Synchronize', 'Early Bird'),
+ 173 : ('Cute Charm'),
+ 174 : ('Cute Charm'),
+ 175 : ('Hustle', 'Serene Grace'),
+ 176 : ('Hustle', 'Serene Grace'),
+ 177 : ('Synchronize', 'Early Bird'),
+ 179 : ('Static'),
+ 180 : ('Static'),
+ 181 : ('Static'),
+ 182 : ('Chlorophyll'),
+ 183 : ('Thick Fat', 'Huge Power'),
+ 184 : ('Thick Fat', 'Huge Power'),
+ 185 : ('Sturdy', 'Rock Head'),
+ 186 : ('Water Absorb', 'Damp'),
+ 187 : ('Chlorophyll'),
+ 188 : ('Chlorophyll'),
+ 189 : ('Chlorophyll'),
+ 190 : ('Run Away', 'Pickup'),
+ 191 : ('Chlorophyll'),
+ 192 : ('Chlorophyll'),
+ 193 : ('Speed Boost', 'Compoundeyes'),
+ 194 : ('Damp', 'Water Absorb'),
+ 195 : ('Damp', 'Water Absorb'),
+ 196 : ('Synchronize'),
+ 197 : ('Synchronize'),
+ 198 : ('Insomnia'),
+ 200 : ('Levitate'),
+ 201 : ('Levitate'),
+ 202 : ('Shadow Tag'),
+ 203 : ('Inner Focus', 'Early Bird'),
+ 204 : ('Sturdy'),
+ 205 : ('Sturdy'),
+ 206 : ('Serene Grace', 'Run Away'),
+ 207 : ('Hyper Cutter', 'Sand Veil'),
+ 208 : ('Rock Head', 'Sturdy'),
+ 209 : ('Intimidate', 'Run Away'),
+ 210 : ('Intimidate'),
+ 211 : ('Poison Point', 'Swift Swim'),
+ 212 : ('Swarm'),
+ 213 : ('Sturdy'),
+ 214 : ('Swarm', 'Guts'),
+ 215 : ('Inner Focus', 'Keen Eye'),
+ 216 : ('Pickup'),
+ 217 : ('Guts'),
+ 218 : ('Magma Armor', 'Flame Body'),
+ 219 : ('Magma Armor', 'Flame Body'),
+ 220 : ('Oblivious'),
+ 221 : ('Oblivious'),
+ 222 : ('Hustle', 'Natural Cure'),
+ 223 : ('Hustle'),
+ 224 : ('Suction Cups'),
+ 225 : ('Vital Spirit', 'Hustle'),
+ 226 : ('Swift Swim', 'Water Absorb'),
+ 227 : ('Keen Eye', 'Sturdy'),
+ 228 : ('Early Bird', 'Flash Fire'),
+ 229 : ('Early Bird', 'Flash Fire'),
+ 230 : ('Swift Swim'),
+ 231 : ('Pickup'),
+ 232 : ('Sturdy'),
+ 233 : ('Trace'),
+ 234 : ('Intimidate'),
+ 235 : ('Own Tempo'),
+ 236 : ('Guts'),
+ 237 : ('Intimidate'),
+ 238 : ('Oblivious'),
+ 239 : ('Static'),
+ 240 : ('Flame Body'),
+ 241 : ('Thick Fat'),
+ 242 : ('Natural Cure', 'Serene Grace'),
+ 243 : ('Pressure'),
+ 244 : ('Pressure'),
+ 245 : ('Pressure'),
+ 246 : ('Guts'),
+ 247 : ('Shed Skin'),
+ 248 : ('Sand Stream'),
+ 249 : ('Pressure'),
+ 250 : ('Pressure'),
+ 251 : ('Natural Cure'),
+ 252 : ('Overgrow'),
+ 253 : ('Overgrow'),
+ 254 : ('Overgrow'),
+ 255 : ('Blaze'),
+ 256 : ('Blaze'),
+ 257 : ('Blaze'),
+ 258 : ('Torrent'),
+ 259 : ('Torrent'),
+ 260 : ('Torrent'),
+ 261 : ('Run Away'),
+ 262 : ('Intimidate'),
+ 263 : ('Pickup'),
+ 264 : ('Pickup'),
+ 265 : ('Shield Dust'),
+ 266 : ('Shed Skin'),
+ 267 : ('Swarm'),
+ 268 : ('Shed Skin'),
+ 269 : ('Shield Dust'),
+ 270 : ('Swift Swim', 'Rain Dish'),
+ 271 : ('Swift Swim', 'Rain Dish'),
+ 272 : ('Swift Swim', 'Rain Dish'),
+ 273 : ('Chlorophyll', 'Early Bird'),
+ 274 : ('Chlorophyll', 'Early Bird'),
+ 275 : ('Chlorophyll', 'Early Bird'),
+ 276 : ('Guts'),
+ 277 : ('Guts'),
+ 278 : ('Keen Eye'),
+ 279 : ('Keen Eye'),
+ 280 : ('Synchronize', 'Trace'),
+ 281 : ('Synchronize', 'Trace'),
+ 282 : ('Synchronize', 'Trace'),
+ 283 : ('Swift Swim'),
+ 284 : ('Intimidate'),
+ 285 : ('Effect Spore'),
+ 286 : ('Effect Spore'),
+ 287 : ('Truant'),
+ 288 : ('Vital Spirit'),
+ 289 : ('Truant'),
+ 290 : ('Compoundeyes'),
+ 291 : ('Speed Boost'),
+ 292 : ('Wonder Guard'),
+ 293 : ('Soundproof'),
+ 294 : ('Soundproof'),
+ 295 : ('Soundproof'),
+ 296 : ('Thick Fat', 'Guts'),
+ 297 : ('Thick Fat', 'Guts'),
+ 298 : ('Thick Fat', 'Huge Power'),
+ 298 : ('Thick Fat', 'Huge Power'),
+ 299 : ('Sturdy', 'Magnet Pull'),
+ 300 : ('Cute Charm'),
+ 301 : ('Cute Charm'),
+ 302 : ('Keen Eye'),
+ 303 : ('Hyper Cutter', 'Intimidate'),
+ 304 : ('Sturdy', 'Rock Head'),
+ 305 : ('Sturdy', 'Rock Head'),
+ 306 : ('Sturdy', 'Rock Head'),
+ 307 : ('Pure Power'),
+ 308 : ('Pure Power'),
+ 309 : ('Static', 'Lightningrod'),
+ 310 : ('Static', 'Lightningrod'),
+ 311 : ('Plus'),
+ 312 : ('Minus'),
+ 313 : ('Illuminate', 'Swarm'),
+ 314 : ('Oblivious'),
+ 315 : ('Natural Cure', 'Poison Point'),
+ 316 : ('Liquid Ooze', 'Sticky Hold'),
+ 317 : ('Liquid Ooze', 'Sticky Hold'),
+ 318 : ('Rough Skin'),
+ 319 : ('Rough Skin'),
+ 320 : ('Water Veil', 'Oblivious'),
+ 321 : ('Water Veil', 'Oblivious'),
+ 322 : ('Oblivious'),
+ 323 : ('Magma Armor'),
+ 324 : ('White Smoke'),
+ 325 : ('Thick Fat', 'Own Tempo'),
+ 326 : ('Thick Fat', 'Own Tempo'),
+ 327 : ('Own Tempo'),
+ 328 : ('Hyper Cutter', 'Arena Trap'),
+ 329 : ('Levitate'),
+ 330 : ('Levitate'),
+ 331 : ('Sand Veil'),
+ 332 : ('Sand Veil'),
+ 333 : ('Natural Cure'),
+ 334 : ('Natural Cure'),
+ 335 : ('Immunity'),
+ 336 : ('Shed Skin'),
+ 337 : ('Levitate'),
+ 338 : ('Levitate'),
+ 339 : ('Oblivious'),
+ 340 : ('Oblivious'),
+ 341 : ('Hyper Cutter', 'Shell Armor'),
+ 342 : ('Hyper Cutter', 'Shell Armor'),
+ 343 : ('Levitate'),
+ 344 : ('Levitate'),
+ 345 : ('Suction Cups'),
+ 346 : ('Suction Cups'),
+ 347 : ('Battle Armor'),
+ 348 : ('Battle Armor'),
+ 349 : ('Swift Swim'),
+ 350 : ('Marvel Scale'),
+ 351 : ('Forecast'),
+ 352 : ('Color Change'),
+ 353 : ('Insomnia'),
+ 354 : ('Insomnia'),
+ 355 : ('Levitate'),
+ 356 : ('Pressure'),
+ 357 : ('Chlorophyll'),
+ 358 : ('Levitate'),
+ 359 : ('Pressure'),
+ 360 : ('Shadow Tag'),
+ 361 : ('Inner Focus'),
+ 362 : ('Inner Focus'),
+ 363 : ('Thick Fat'),
+ 364 : ('Thick Fat'),
+ 365 : ('Thick Fat'),
+ 366 : ('Shell Armor'),
+ 367 : ('Swift Swim'),
+ 368 : ('Swift Swim'),
+ 369 : ('Swift Swim', 'Rock Head'),
+ 370 : ('Swift Swim'),
+ 371 : ('Rock Head'),
+ 372 : ('Rock Head'),
+ 373 : ('Intimidate'),
+ 374 : ('Clear Body'),
+ 375 : ('Clear Body'),
+ 376 : ('Clear Body'),
+ 377 : ('Clear Body'),
+ 378 : ('Clear Body'),
+ 379 : ('Clear Body'),
+ 380 : ('Levitate'),
+ 381 : ('Levitate'),
+ 382 : ('Drizzle'),
+ 383 : ('Drought'),
+ 384 : ('Air Lock'),
+ 385 : ('Serene Grace'),
+ 386 : ('Pressure')
+}
+
 items = None
 pokemon = None
 pokemon_lower = None
@@ -8115,7 +10029,7 @@ class PikaSav():
         global pokemon
         global pokedex
         global types
-        file = askopenfilename(filetypes=[('R/B/Y SaveGame', '.sav;*.sa1')])
+        file = askopenfilename(filetypes=[('All files', '*.*')])
         if file:
             sav = RBSav(file, True)
             self.gen = 1
@@ -8138,7 +10052,7 @@ class PikaSav():
         global pokemon
         global pokedex
         global types
-        file = askopenfilename(filetypes=[('G/S SaveGame', '.sav;*.sa1')])
+        file = askopenfilename(filetypes=[('All files', '*.*')])
         if file:
             sav = GSSav(file, True)
             items = items_gs[:]
@@ -8161,7 +10075,7 @@ class PikaSav():
         global pokemon
         global pokedex
         global types
-        file = askopenfilename(filetypes=[('Crystal SaveGame', '.sav;*.sa1')])
+        file = askopenfilename(filetypes=[('All files', '*.*')])
         if file:
             sav = CRSav(file, True)
             items = items_gs[:]
@@ -8184,7 +10098,7 @@ class PikaSav():
         global pokemon
         global pokedex
         global types
-        file = askopenfilename(filetypes=[('Ruby/Sapphire SaveGame', '.sav;*.sa1')])
+        file = askopenfilename(filetypes=[('All files', '*.*')])
         if file:
             sav = RSSav(file, 1)
             items = items_rs[:]
@@ -8207,7 +10121,7 @@ class PikaSav():
         global pokemon
         global pokedex
         global types
-        file = askopenfilename(filetypes=[('RBY/GSC/RS Save Files', '.sav;*.sa1'), ('All files', '*.*')])
+        file = askopenfilename(filetypes=[('All files', '*.*')])
         if file:
             sav = RSSav(file)
             if not sav.ok:
@@ -8358,18 +10272,25 @@ class PikaSav():
         menu_edit.add_separator()
         menu_edit.add_command(label='Adjust exp to level', command=self.adjust_exp)
         menu_edit.add_command(label='Adjust stats to level/values', command=self.adjust_stats)
+        if self.gen == 1:
+            menu_edit.add_command(label='Adjust sprite/type', command=self.adjust_sprite_type)
+        if self.gen == 2:
+            menu_edit.add_command(label='Adjust sprite', command=self.adjust_sprite_type)
         menu_edit.add_separator()
         menu_edit.add_command(label='Heal Pokemon', command=self.heal_pkm)
-        menu_edit.add_separator()
-        menu_edit.add_command(label='Make Shiny', command=self.make_shiny)
+        if self.gen == 2:
+         menu_edit.add_separator()
+         menu_edit.add_command(label='Make Shiny', command=self.make_shiny)
         menu.add_cascade(label='Fast editing', menu=menu_edit)
         menu_hp = Menu(menu, tearoff=0)
         for t in range(len(types_gs_hp)):
             menu_hp.add_command(label='Base 70, %s type' % types_gs_hp[t], command=lambda t = t: self.hidden_power_set(t))
-
         menu.add_cascade(label='Hidden Power', menu=menu_hp)
         menu_info = Menu(menu, tearoff=0)
-        menu_info.add_command(label='Hidden Power? Shiny? HP?', command=self.iv_info)
+        if self.gen <= 2:
+            menu_info.add_command(label='Hidden Power? Shiny? HP?', command=self.iv_info)
+        else:
+            menu_info.add_command(label='Check Hidden Power', command=self.iv_info)
         menu_info.add_separator()
         menu_info.add_command(label='.PKM info', command=self.pkm_info)
         menu.add_cascade(label='About this .PKM', menu=menu_info)
@@ -8378,11 +10299,20 @@ class PikaSav():
     def hidden_power_set(self, type):
         if self.pokeedit != None:
             self.wmdel_pokeedit()
-        iv_set = hidden_power_ivs[type]
-        self.pkm = self.sav.pkm_set(self.pkm, 'attackiv', iv_set[0])
-        self.pkm = self.sav.pkm_set(self.pkm, 'defenseiv', iv_set[1])
-        self.pkm = self.sav.pkm_set(self.pkm, 'speediv', iv_set[2])
-        self.pkm = self.sav.pkm_set(self.pkm, 'specialiv', iv_set[3])
+        if self.gen <= 2:
+            iv_set = hidden_power_ivs[type]
+            self.pkm = self.sav.pkm_set(self.pkm, 'attackiv', iv_set[0])
+            self.pkm = self.sav.pkm_set(self.pkm, 'defenseiv', iv_set[1])
+            self.pkm = self.sav.pkm_set(self.pkm, 'speediv', iv_set[2])
+            self.pkm = self.sav.pkm_set(self.pkm, 'specialiv', iv_set[3])
+        else:
+            iv_set = hidden_power_ivs_rs[type]
+            self.pkm = self.sav.pkm_set(self.pkm, 'maxhpiv', iv_set[0])
+            self.pkm = self.sav.pkm_set(self.pkm, 'attackiv', iv_set[1])
+            self.pkm = self.sav.pkm_set(self.pkm, 'defenseiv', iv_set[2])
+            self.pkm = self.sav.pkm_set(self.pkm, 'specialattackiv', iv_set[3])
+            self.pkm = self.sav.pkm_set(self.pkm, 'specialdefenseiv', iv_set[4])
+            self.pkm = self.sav.pkm_set(self.pkm, 'speediv', iv_set[5])
         self.adjust_stats()
         self.reload_pkm()
 
@@ -8413,23 +10343,37 @@ class PikaSav():
 
     def iv_info(self):
         self.reload_pkm()
-        iv_attack = self.sav.pkm_get(self.pkm, 'attackiv')
-        iv_defense = self.sav.pkm_get(self.pkm, 'defenseiv')
-        iv_speed = self.sav.pkm_get(self.pkm, 'speediv')
-        iv_special = self.sav.pkm_get(self.pkm, 'specialiv')
-        iv_hp = iv_attack % 2 * 8 + iv_defense % 2 * 4 + iv_speed % 2 * 2 + iv_special % 2
-        is_shiny = 'not shiny'
-        if iv_defense == 10 and iv_speed == 10 and iv_special == 10 and iv_attack & 2:
-            is_shiny = 'shiny'
-        hp_a = (iv_attack & 8) + (iv_defense & 8) / 2 + (iv_speed & 8) / 4 + (iv_special & 8) / 8
-        hp_b = iv_special & 3
-        hp_power = int((5 * hp_a + hp_b) / 2 + 31)
-        hp_type_id = (iv_attack & 3) * 4 + (iv_defense & 3)
-        hp_type = types_gs_hp[hp_type_id]
-        showinfo('About the IV combination', 'Your Pokemon is %s and its HP IV is %d.\nIts Hidden Power is %s type and its power is %d.' % (is_shiny,
-         iv_hp,
-         hp_type,
-         hp_power), parent=self.pokeedit)
+        if self.gen <= 2:
+            iv_attack = self.sav.pkm_get(self.pkm, 'attackiv')
+            iv_defense = self.sav.pkm_get(self.pkm, 'defenseiv')
+            iv_speed = self.sav.pkm_get(self.pkm, 'speediv')
+            iv_special = self.sav.pkm_get(self.pkm, 'specialiv')
+            iv_hp = iv_attack % 2 * 8 + iv_defense % 2 * 4 + iv_speed % 2 * 2 + iv_special % 2
+            is_shiny = 'not shiny'
+            if iv_defense == 10 and iv_speed == 10 and iv_special == 10 and iv_attack & 2:
+                is_shiny = 'shiny'
+            hp_a = (iv_attack & 8) + (iv_defense & 8) / 2 + (iv_speed & 8) / 4 + (iv_special & 8) / 8
+            hp_b = iv_special & 3
+            hp_power = int((5 * hp_a + hp_b) / 2 + 31)
+            hp_type_id = (iv_attack & 3) * 4 + (iv_defense & 3)
+            hp_type = types_gs_hp[hp_type_id]
+            showinfo('About the IV combination', 'Your Pok\xc3\xa9mon is %s and its HP IV is %d.\nIts Hidden Power is %s type and its power is %d.' % (is_shiny,
+            iv_hp,
+            hp_type,
+            hp_power), parent=self.pokeedit)
+        else:
+            iv_hp = self.sav.pkm_get(self.pkm, 'maxhpiv')
+            iv_attack = self.sav.pkm_get(self.pkm, 'attackiv')
+            iv_defense = self.sav.pkm_get(self.pkm, 'defenseiv')
+            iv_speed = self.sav.pkm_get(self.pkm, 'speediv')
+            iv_spatk = self.sav.pkm_get(self.pkm, 'specialattackiv')
+            iv_spdef = self.sav.pkm_get(self.pkm, 'specialdefenseiv')
+            bits = (iv_hp & 1) + (iv_attack & 1) * 2 + (iv_defense & 1) * 4 + (iv_speed & 1) * 8 + (iv_spatk & 1) * 16 + (iv_spdef & 1) * 32
+            hp_type_id = int((bits * 15) / 63)
+            hp_type = types_gs_hp[hp_type_id]
+            bits = (iv_hp & 2) / 2 + (iv_attack & 2) + (iv_defense & 2) * 2 + (iv_speed & 2) * 4 + (iv_spatk & 2) * 8 + (iv_spdef & 2) * 16
+            hp_power = int(((bits * 40) / 63) + 30)
+            showinfo('About the IV combination', 'Your Pokemon\'s Hidden Power is %s type and its power is %d.' % (hp_type, hp_power), parent=self.pokeedit)
 
     def reload_pkm(self):
         p = self.p
@@ -8470,20 +10414,36 @@ class PikaSav():
     def max_everything(self):
         if self.pokeedit != None:
             self.wmdel_pokeedit()
-        self.pkm = self.sav.pkm_set(self.pkm, 'maxhpev', 65535)
-        self.pkm = self.sav.pkm_set(self.pkm, 'attackev', 65535)
-        self.pkm = self.sav.pkm_set(self.pkm, 'defenseev', 65535)
-        self.pkm = self.sav.pkm_set(self.pkm, 'specialev', 65535)
-        self.pkm = self.sav.pkm_set(self.pkm, 'speedev', 65535)
-        self.pkm = self.sav.pkm_set(self.pkm, 'specialdefenseev', 65535)
-        self.pkm = self.sav.pkm_set(self.pkm, 'specialattackev', 65535)
+        if self.gen <= 2:
+            self.pkm = self.sav.pkm_set(self.pkm, 'maxhpev', 65535)
+            self.pkm = self.sav.pkm_set(self.pkm, 'attackev', 65535)
+            self.pkm = self.sav.pkm_set(self.pkm, 'defenseev', 65535)
+            self.pkm = self.sav.pkm_set(self.pkm, 'specialev', 65535)
+            self.pkm = self.sav.pkm_set(self.pkm, 'speedev', 65535)
+            self.pkm = self.sav.pkm_set(self.pkm, 'attackiv', 15)
+            self.pkm = self.sav.pkm_set(self.pkm, 'defenseiv', 15)
+            self.pkm = self.sav.pkm_set(self.pkm, 'speediv', 15)
+            self.pkm = self.sav.pkm_set(self.pkm, 'specialattackiv', 15)
+            self.pkm = self.sav.pkm_set(self.pkm, 'specialdefenseiv', 15)
+            self.pkm = self.sav.pkm_set(self.pkm, 'specialiv', 15)
+            self.pkm = self.sav.pkm_set(self.pkm, 'specialdefenseev', 65535)
+            self.pkm = self.sav.pkm_set(self.pkm, 'specialattackev', 65535)
+        else:
+            self.pkm = self.sav.pkm_set(self.pkm, 'maxhpev', 252)
+            self.pkm = self.sav.pkm_set(self.pkm, 'attackev', 252)
+            self.pkm = self.sav.pkm_set(self.pkm, 'defenseev', 252)
+            self.pkm = self.sav.pkm_set(self.pkm, 'specialev', 252)
+            self.pkm = self.sav.pkm_set(self.pkm, 'speedev', 252)
+            self.pkm = self.sav.pkm_set(self.pkm, 'maxhpiv', 31)
+            self.pkm = self.sav.pkm_set(self.pkm, 'attackiv', 31)
+            self.pkm = self.sav.pkm_set(self.pkm, 'defenseiv', 31)
+            self.pkm = self.sav.pkm_set(self.pkm, 'speediv', 31)
+            self.pkm = self.sav.pkm_set(self.pkm, 'specialattackiv', 31)
+            self.pkm = self.sav.pkm_set(self.pkm, 'specialdefenseiv', 31)
+            self.pkm = self.sav.pkm_set(self.pkm, 'specialiv', 31)
+            self.pkm = self.sav.pkm_set(self.pkm, 'specialdefenseev', 252)
+            self.pkm = self.sav.pkm_set(self.pkm, 'specialattackev', 252)
         self.pkm = self.sav.pkm_set(self.pkm, 'happiness', 255)
-        self.pkm = self.sav.pkm_set(self.pkm, 'attackiv', 15)
-        self.pkm = self.sav.pkm_set(self.pkm, 'defenseiv', 15)
-        self.pkm = self.sav.pkm_set(self.pkm, 'speediv', 15)
-        self.pkm = self.sav.pkm_set(self.pkm, 'specialattackiv', 15)
-        self.pkm = self.sav.pkm_set(self.pkm, 'specialdefenseiv', 15)
-        self.pkm = self.sav.pkm_set(self.pkm, 'specialiv', 15)
         self.pkm = self.sav.pkm_set(self.pkm, 'move1ppup', 3)
         self.pkm = self.sav.pkm_set(self.pkm, 'move2ppup', 3)
         self.pkm = self.sav.pkm_set(self.pkm, 'move3ppup', 3)
@@ -8528,6 +10488,26 @@ class PikaSav():
 
         self.reload_pkm()
 
+    def adjust_sprite_type(self):
+        if self.gen == 1:
+            pkmn = self.pokeclass['selection']
+            num = pokemon_rb.index(pkmn)
+            self.pokesprite['selection'] = (pokemon[num])
+            pkmn = pkmn[:pkmn.index('(')-1]
+            for i in range(len(pokedex_rb)):
+                if pokedex_rb[i].find(pkmn) != -1:
+                    num = i
+                    break
+            else:
+                num = 255
+            self.type1['selection'] = types_rb[pokemon_types_rb[num][0]]
+            self.type2['selection'] = types_rb[pokemon_types_rb[num][1]]
+        else:
+            num = pokemon_gs.index(self.pokeclass['selection'])
+            self.pkm = self.sav.pkm_set(self.pkm, 'num', num)
+            self.pokesprite['selection'] = (pokemon[num])
+        self.reload_pkm()
+
     def adjust_stats(self):
         if self.pokeedit != None:
             self.wmdel_pokeedit()
@@ -8539,25 +10519,55 @@ class PikaSav():
         if self.b == None:
             curlevel = self.sav.pkm_get(self.pkm, 'curlevel')
         level = max(level, curlevel)
-        iv_attack = self.sav.pkm_get(self.pkm, 'attackiv')
-        iv_defense = self.sav.pkm_get(self.pkm, 'defenseiv')
-        iv_speed = self.sav.pkm_get(self.pkm, 'speediv')
-        iv_special = self.sav.pkm_get(self.pkm, 'specialiv')
-        iv_hp = iv_attack % 2 * 8 + iv_defense % 2 * 4 + iv_speed % 2 * 2 + iv_special % 2
-        ev_hp = int(level * math.sqrt(self.sav.pkm_get(self.pkm, 'maxhpev')) / 400)
-        ev_attack = int(level * math.sqrt(self.sav.pkm_get(self.pkm, 'attackev')) / 400)
-        ev_defense = int(level * math.sqrt(self.sav.pkm_get(self.pkm, 'defenseev')) / 400)
-        ev_speed = int(level * math.sqrt(self.sav.pkm_get(self.pkm, 'speedev')) / 400)
-        ev_special = int(level * math.sqrt(self.sav.pkm_get(self.pkm, 'specialev')) / 400)
-        self.pkm = self.sav.pkm_set(self.pkm, 'hp', int(10 + level * (base_hp[num] + iv_hp + 50) / 50) + ev_hp)
-        if self.b == None:
-            self.pkm = self.sav.pkm_set(self.pkm, 'maxhp', int(10 + level * (base_hp[num] + iv_hp + 50) / 50) + ev_hp)
-            self.pkm = self.sav.pkm_set(self.pkm, 'attack', int(5 + level * (base_attack[num] + iv_attack) / 50) + ev_attack)
-            self.pkm = self.sav.pkm_set(self.pkm, 'defense', int(5 + level * (base_defense[num] + iv_defense) / 50) + ev_defense)
-            self.pkm = self.sav.pkm_set(self.pkm, 'speed', int(5 + level * (base_speed[num] + iv_speed) / 50) + ev_speed)
-            self.pkm = self.sav.pkm_set(self.pkm, 'specialattack', int(5 + level * (base_specialattack[num] + iv_special) / 50) + ev_special)
-            self.pkm = self.sav.pkm_set(self.pkm, 'specialdefense', int(5 + level * (base_specialdefense[num] + iv_special) / 50) + ev_special)
-            self.pkm = self.sav.pkm_set(self.pkm, 'special', int(5 + level * (base_special[num] + iv_special) / 50) + ev_attack)
+        if self.gen <= 2:
+            iv_attack = self.sav.pkm_get(self.pkm, 'attackiv')
+            iv_defense = self.sav.pkm_get(self.pkm, 'defenseiv')
+            iv_speed = self.sav.pkm_get(self.pkm, 'speediv')
+            iv_special = self.sav.pkm_get(self.pkm, 'specialiv')
+            iv_hp = iv_attack % 2 * 8 + iv_defense % 2 * 4 + iv_speed % 2 * 2 + iv_special % 2
+            ev_hp = int(level * math.sqrt(self.sav.pkm_get(self.pkm, 'maxhpev')) / 400)
+            ev_attack = int(level * math.sqrt(self.sav.pkm_get(self.pkm, 'attackev')) / 400)
+            ev_defense = int(level * math.sqrt(self.sav.pkm_get(self.pkm, 'defenseev')) / 400)
+            ev_speed = int(level * math.sqrt(self.sav.pkm_get(self.pkm, 'speedev')) / 400)
+            ev_special = int(level * math.sqrt(self.sav.pkm_get(self.pkm, 'specialev')) / 400)
+            self.pkm = self.sav.pkm_set(self.pkm, 'hp', int(10 + level * (base_hp[num] + iv_hp + 50) / 50) + ev_hp)
+            if self.b == None:
+                self.pkm = self.sav.pkm_set(self.pkm, 'maxhp', int(10 + level * (base_hp[num] + iv_hp + 50) / 50) + ev_hp)
+                self.pkm = self.sav.pkm_set(self.pkm, 'attack', int(5 + level * (base_attack[num] + iv_attack) / 50) + ev_attack)
+                self.pkm = self.sav.pkm_set(self.pkm, 'defense', int(5 + level * (base_defense[num] + iv_defense) / 50) + ev_defense)
+                self.pkm = self.sav.pkm_set(self.pkm, 'speed', int(5 + level * (base_speed[num] + iv_speed) / 50) + ev_speed)
+                self.pkm = self.sav.pkm_set(self.pkm, 'specialattack', int(5 + level * (base_specialattack[num] + iv_special) / 50) + ev_special)
+                self.pkm = self.sav.pkm_set(self.pkm, 'specialdefense', int(5 + level * (base_specialdefense[num] + iv_special) / 50) + ev_special)
+                self.pkm = self.sav.pkm_set(self.pkm, 'special', int(5 + level * (base_special[num] + iv_special) / 50) + ev_attack)
+        else:
+            iv_hp = self.sav.pkm_get(self.pkm, 'maxhpiv')
+            iv_attack = self.sav.pkm_get(self.pkm, 'attackiv')
+            iv_defense = self.sav.pkm_get(self.pkm, 'defenseiv')
+            iv_speed = self.sav.pkm_get(self.pkm, 'speediv')
+            iv_spatk = self.sav.pkm_get(self.pkm, 'specialattackiv')
+            iv_spdef = self.sav.pkm_get(self.pkm, 'specialdefenseiv')
+            ev_hp = self.sav.pkm_get(self.pkm, 'maxhpev')
+            ev_attack = self.sav.pkm_get(self.pkm, 'attackev')
+            ev_defense = self.sav.pkm_get(self.pkm, 'defenseev')
+            ev_speed = self.sav.pkm_get(self.pkm, 'speedev')
+            ev_spatk = self.sav.pkm_get(self.pkm, 'specialattackev')
+            ev_spdef = self.sav.pkm_get(self.pkm, 'specialdefenseev')
+            pid = self.sav.pkm_get(self.pkm, 'pid')
+            nature = pid % 25
+            hp = int((2 * base_hp[num] + iv_hp + int(ev_hp/4)) * level / 100) + level + 10
+            atk = int((int(((2 * base_attack[num] + iv_attack + int(ev_attack/4)) * level) / 100) + 5) * natures_atk[nature])
+            dfc = int((int((2 * base_defense[num] + iv_defense + int(ev_defense/4)) * level / 100) + 5) * natures_def[nature])
+            spatk = int((int((2 * base_specialattack[num] + iv_spatk + int(ev_spatk/4)) * level / 100) + 5) * natures_spatk[nature])
+            spdef = int((int((2 * base_specialdefense[num] + iv_spdef + int(ev_spdef/4)) * level / 100) + 5) * natures_spdef[nature])
+            spe = int((int((2 * base_speed[num] + iv_speed + int(ev_speed/4)) * level / 100) + 5) * natures_spe[nature])
+            self.pkm = self.sav.pkm_set(self.pkm, 'hp', hp)
+            self.pkm = self.sav.pkm_set(self.pkm, 'maxhp', hp)
+            self.pkm = self.sav.pkm_set(self.pkm, 'attack', atk)
+            self.pkm = self.sav.pkm_set(self.pkm, 'defense', dfc)
+            self.pkm = self.sav.pkm_set(self.pkm, 'specialattack', spatk)
+            self.pkm = self.sav.pkm_set(self.pkm, 'specialdefense', spdef)
+            self.pkm = self.sav.pkm_set(self.pkm, 'speed', spe)
+
         self.reload_pkm()
 
     def adjust_exp(self, level = None):
@@ -8573,12 +10583,28 @@ class PikaSav():
             if self.b == None:
                 curlevel = self.sav.pkm_get(self.pkm, 'curlevel')
             level = max(level, curlevel)
-        exp = int(level ** 3)
-        if growth == 3:
+        exp = int(level ** 3) # Medium Fast
+        if growth == 1: # Erratic
+            if level <= 50:
+                exp = (level ** 3 * (100 - level)) / 50
+            elif level <= 68:
+                exp = (level ** 3 * (150 - level)) / 100
+            elif level <= 98:
+                exp = (level ** 3 * int((1911 - 10 * level) / 3)) / 500
+            else:
+                exp = (level ** 3 * (160 - level)) / 100
+        if growth == 2: # Fluctuating
+            if level <= 15:
+                exp = int((level ** 3) * ((int((level+1)/3) + 24) / 50.0))
+            elif level <= 36:
+                exp = int((level ** 3) * ((level + 14) / 50.0))
+            else:
+                exp = int((level ** 3) * ((int(level/2) + 32) / 50.0))
+        if growth == 3: # Medium Slow
             exp = int(math.floor(level ** 3 * 1.2 - level * level * 15 + level * 100 - 140))
-        if growth == 4:
+        if growth == 4: # Fast
             exp = int(math.floor(level ** 3 * 0.8))
-        if growth == 5:
+        if growth == 5: # Slow
             exp = int(math.floor(level ** 3 * 1.25))
         self.pkm = self.sav.pkm_set(self.pkm, 'exp', exp)
         self.reload_pkm()
@@ -8611,6 +10637,194 @@ class PikaSav():
         self.adjust_stats()
         self.heal_pkm()
 
+    def get_pmkm_info(self):
+        pokemons = []
+
+        for p in range(6):
+            pokemon = {}
+            num = self.sav.pkm_get(self.sav.pokemon[p], 'sprite')
+            if num == 255:
+                break
+            if self.gen == 1:
+                pkmn = pokemon_lower_rb[num].capitalize()
+            elif self.gen == 2:
+                pkmn = pokemon_lower_gs[num].capitalize()
+            else:
+                pkmn = pokemon_rs[num][:pokemon_rs[num].find('(')-1]
+            if pkmn.find('Nidoran') != -1:
+                if pkmn == 'Nidoranm':
+                    pkmn = 'Nidoran-M'
+                    num = 32
+                elif pkmn == 'Nidoranh':
+                    pkmn = 'Nidoran-F'
+                    num = 29
+                else:
+                    if pokemon_lower_rs[num-1] == 'sandslash':
+                        pkmn = 'Nidoran-F'
+                        num = 29
+                    else:
+                        pkmn = 'Nidoran-M'
+                        num = 32
+            else:
+                for i in range(len(pokedex_rs)):
+                    if pokedex_rs[i].find(pokemon_rs[num][:pokemon_rs[num].find('(')-1]) != -1:
+                        num = i
+                        break
+                else:
+                    return
+            nickname = self.sav.pkm_get(self.sav.pokemon[p], 'name')
+            level = self.sav.pkm_get(self.sav.pokemon[p], 'curlevel')
+            hp_ev = self.sav.pkm_get(self.sav.pokemon[p], 'maxhpev')
+            atk_ev = self.sav.pkm_get(self.sav.pokemon[p], 'attackev')
+            def_ev = self.sav.pkm_get(self.sav.pokemon[p], 'defenseev')
+            spe_ev = self.sav.pkm_get(self.sav.pokemon[p], 'speedev')
+            atk_iv = self.sav.pkm_get(self.sav.pokemon[p], 'attackiv')
+            def_iv = self.sav.pkm_get(self.sav.pokemon[p], 'defenseiv')
+            spe_iv = self.sav.pkm_get(self.sav.pokemon[p], 'speediv')
+            if self.gen <= 2:
+                spc_iv = self.sav.pkm_get(self.sav.pokemon[p], 'specialiv')
+                spc_ev = int(math.sqrt(self.sav.pkm_get(self.sav.pokemon[p], 'specialev')))
+                hp_iv = atk_iv % 2 * 8 + def_iv % 2 * 4 + spe_iv % 2 * 2 + spc_iv % 2
+                hp_iv = hp_iv * 2 + 1
+                atk_iv = atk_iv * 2 + 1
+                def_iv = def_iv * 2 + 1
+                spe_iv = spe_iv * 2 + 1
+                spc_iv = spc_iv * 2 + 1
+                hp_ev = int(math.sqrt(hp_ev))
+                atk_ev = int(math.sqrt(atk_ev))
+                def_ev = int(math.sqrt(def_ev))
+                spe_ev = int(math.sqrt(spe_ev))
+            else:
+                hp_iv = self.sav.pkm_get(self.sav.pokemon[p], 'maxhpiv')
+                spd_iv = self.sav.pkm_get(self.sav.pokemon[p], 'specialdefenseiv')
+                spa_iv = self.sav.pkm_get(self.sav.pokemon[p], 'specialattackiv')
+                spd_ev = self.sav.pkm_get(self.sav.pokemon[p], 'specialdefenseev')
+                spa_ev = self.sav.pkm_get(self.sav.pokemon[p], 'specialattackev')
+
+            moves = []
+            for i in range(4):
+                move = self.sav.pkm_get(self.sav.pokemon[p], 'move%d' % (i+1))
+                if move == 0:
+                    break
+                move = moves_rs[move]
+                move = move[:move.find('(')-1]
+                if move == 'Hidden Power':
+                    if self.gen == 2:
+                        hp_type_id = ((atk_iv/2) & 3) * 4 + ((def_iv/2) & 3)
+                        hp_type = types_gs_hp[hp_type_id]
+                        move += ' [' + hp_type + ']'
+                    elif self.gen == 3:
+                        bits = (hp_iv & 1) + (atk_iv & 1) * 2 + (def_iv & 1) * 4 + (spe_iv & 1) * 8 + (spa_iv & 1) * 16 + (spd_iv & 1) * 32
+                        hp_type_id = int((bits * 15) / 63)
+                        hp_type = types_gs_hp[hp_type_id]
+                        move += ' [' + hp_type + ']'
+                moves.append(move)
+
+            gender = 'L'
+            item = ''
+            shiny = 'No'
+            happiness = 255
+            if isinstance(pokemon_abilities[num], str):
+                ability = pokemon_abilities[num]
+            else:
+                ability = pokemon_abilities[num][0]
+            nature = ''
+
+            if self.gen >= 2:
+                item = self.sav.pkm_get(self.sav.pokemon[p], 'item')
+                if item == 0:
+                    item = ''
+                elif self.gen == 2:
+                    item = items_gs[item]
+                    item = item[:item.find('(')-1]
+                else:
+                    item = items_rs[item]
+                    item = item[:item.find('(')-1]
+                happiness = self.sav.pkm_get(self.sav.pokemon[p], 'happiness')
+                if self.gen == 2:
+                    if def_iv == 10 and spe_iv == 10 and spc_iv == 10 and atk_iv & 2:
+                        shiny = 'Yes'
+                    else:
+                        shiny = 'No'
+                    if num in gender_rate:
+                        if gender_rate[num] == 0:
+                            gender = 'M'
+                        elif gender_rate[num] == 254:
+                            gender = 'F'
+                        elif gender_rate[num] == 255:
+                            gender = 'L'
+                        elif gender_rate[num] == 31:
+                            if int(atk_iv) < 2:
+                                gender = 'F'
+                            else:
+                                gender = 'M'
+                        elif gender_rate[num] == 63:
+                            if int(atk_iv) < 4:
+                                gender = 'F'
+                            else:
+                                gender = 'M'
+                        elif gender_rate[num] == 191:
+                            if int(atk_iv) < 12:
+                                gender = 'F'
+                            else:
+                                gender = 'M'
+                    else:
+                        if int(atk_iv) < 8:
+                            gender = 'F'
+                        else:
+                            gender = 'M'
+
+                else:
+                    pid = self.sav.pkm_get(self.sav.pokemon[p], 'pid')
+                    if (not isinstance(pokemon_abilities[num], str)) and ((pid % 2) == 1):
+                        ability = pokemon_abilities[num][1]
+                    nature = natures[pid % 25][:natures[pid % 25].find(' ')]
+                    if self.sav.pkm_get(self.sav.pokemon[p], 'num') in gender_rate:
+                        if gender_rate[self.sav.pkm_get(self.sav.pokemon[p], 'num')] == 254:
+                            gender = 'F'
+                        elif gender_rate[self.sav.pkm_get(self.sav.pokemon[p], 'num')] == 255:
+                            gender = 'L'
+                        else:
+                            if gender >= gender_rate[self.sav.pkm_get(self.sav.pokemon[p], 'num')]:
+                                gender = 'M'
+                            else:
+                                gender = 'F'
+                    else:
+                        if gender >= 127:
+                            gender = 'M'
+                        else:
+                            gender = 'F'
+                    p1 = pid / 65536
+                    p2 = pid % 65536
+                    otnum = self.sav.pkm_get(self.sav.pokemon[p], 'otnum')
+                    secretid = self.sav.pkm_get(self.sav.pokemon[p], 'secretid')
+                    if (p1 ^ p2 ^ otnum ^ secretid) < 8:
+                        shiny = 'Yes'
+                    else:
+                        shiny = 'No'
+
+            pokemon['Pokemon'] = pkmn
+            pokemon['Nickname'] = nickname
+            pokemon['Level'] = level
+            pokemon['Moves'] = moves
+            if self.gen <= 2:
+                pokemon['IVs'] = [hp_iv, atk_iv, def_iv, spc_iv, spc_iv, spe_iv]
+                pokemon['EVs'] = [hp_ev, atk_ev, def_ev, spc_ev, spc_ev, spe_ev]
+            else:
+                pokemon['IVs'] = [hp_iv, atk_iv, def_iv, spa_iv, spd_iv, spe_iv]
+                pokemon['EVs'] = [hp_ev, atk_ev, def_ev, spa_ev, spd_ev, spe_ev]
+            pokemon['Ability'] = ability
+            pokemon['Gender'] = gender
+            pokemon['Item'] = item
+            pokemon['Shiny'] = shiny
+            pokemon['Happiness'] = happiness
+            pokemon['Nature'] = nature
+
+            pokemons.append(pokemon)
+
+        return create_exportable(pokemons)
+
+
     def save_pkm(self):
         file = asksaveasfilename(filetypes=[('PKM File', '.pkm')])
         if not file:
@@ -8640,10 +10854,10 @@ class PikaSav():
             # Species
             if pkmn['Pokemon'].find('Nidoran-M') != -1:
                 num = 3
-                pkmNo = 29
+                pkm_no = 29
             elif pkmn['Pokemon'].find('Nidoran-F') != -1:
                 num = 15
-                pkmNo = 32
+                pkm_no = 32
             else:
                 try:
                     if self.gen == 2:
@@ -8652,25 +10866,31 @@ class PikaSav():
                         num = pokemon_lower_rb.index(pkmn['Pokemon'].lower())
                         for index in range(len(pokedex_rb)):
                             if pokedex_rb[index].find(pkmn['Pokemon']) != -1:
-                                pkmNo = index
+                                pkm_no = index
+                                break
+                        else:
+                            continue
+                    else:
+                        pkm_no = pokemon_lower_rs.index(pkmn['Pokemon'].lower())
+                        for index in range(len(pokemon_rs)):
+                            if pokemon_rs[index].find(pkmn['Pokemon']) != -1:
+                                num = index
                                 break
                         else:
                             continue
                 except ValueError:
                     continue
 
-            self.pkm = self.sav.pkm_set(self.pkm, 'num', num)
-            self.pkm = self.sav.pkm_set(self.pkm, 'sprite', num)
             bin_pkm += 1
-
-            if self.gen == 1:
-                num = pkmNo
 
             # Original trainer name and num
             otname = self.sav.pkm_get(self.sav.pokemon[0], 'otname')
             otnum = self.sav.pkm_get(self.sav.pokemon[0], 'otnum')
             self.pkm = self.sav.pkm_set(self.pkm, 'otname', otname)
             self.pkm = self.sav.pkm_set(self.pkm, 'otnum', otnum)
+            if self.gen == 3:
+                secretid = self.sav.pkm_get(self.sav.pokemon[0], 'secretid')
+                self.pkm = self.sav.pkm_set(self.pkm, 'secretid', secretid)
 
             # Nickname
             if pkmn['Nickname'] == "":
@@ -8681,66 +10901,145 @@ class PikaSav():
             else:
                 nickname = pkmn['Nickname']
             self.pkm = self.sav.pkm_set(self.pkm, 'name', nickname)
+            self.pkm = self.sav.pkm_set(self.pkm, 'num', num)
+
+            if self.gen != 2:
+                num = pkm_no
 
             # Level
-            if pkmn['Level'] == "":
+            if pkmn['Level'] == '':
                 level = 100
             else:
                 level = int(pkmn['Level'])
             self.pkm = self.sav.pkm_set(self.pkm, 'level', level)
             if self.gen == 1:
-               self.pkm = self.sav.pkm_set(self.pkm, 'curlevel', level)
+                self.pkm = self.sav.pkm_set(self.pkm, 'curlevel', level)
 
             # Types
             if self.gen == 1:
                 self.pkm = self.sav.pkm_set(self.pkm, 'type1', pokemon_types_rb[num][0])
                 self.pkm = self.sav.pkm_set(self.pkm, 'type2', pokemon_types_rb[num][1])
 
+            # PID
+            if self.gen == 3:
+                if not isinstance(pokemon_abilities, str):
+                    if pokemon_abilities[num][1] == pkmn['Ability']:
+                        ability = 1
+                    else:
+                        ability = 0
+                else:
+                    ability = 0
+                if pkmn['Shiny'] == 'Yes':
+                    shiny = 0
+                else:
+                    shiny = 1
+                for j in range(len(natures)):
+                    if natures[j].find(pkmn['Nature']) != -1:
+                        nature = j
+                        break
+                else:
+                    nature = 0
+                if pkmn['Gender'] == '':
+                    gender = randint(0, 1)
+                elif pkmn['Gender'] == 'M':
+                    gender = 0
+                else:
+                    gender = 1
+                pid = self.generate_pid(num, otnum, secretid, nature, gender, ability, shiny)
+                self.pkm = self.sav.pkm_set(self.pkm, 'pid', pid)
+
             # Stats
-            stats = ['HP', 'Atk', 'Def', 'SpA', 'Spe']
-            evs = [65535, 65535, 65535, 65535, 65535]
-            ivs = [15, 15, 15, 15, 15, 15]
-            for j in range(5):
-                if pkmn['EVs'][stats[j]] != '' and pkmn['EVs'][stats[j]] != '' < 252:
-                    evs[j] = int(pkmn['EVs'][stats[j]]) ** 2
-                if pkmn['IVs'][stats[j]] != '' and pkmn['IVs'][stats[j]] != '' < 31:
-                    ivs[j] = int(pkmn['IVs'][stats[j]]) / 2
-            self.pkm = self.sav.pkm_set(self.pkm, 'maxhpev', evs[0])
-            self.pkm = self.sav.pkm_set(self.pkm, 'attackev', evs[1])
-            self.pkm = self.sav.pkm_set(self.pkm, 'defenseev', evs[2])
-            self.pkm = self.sav.pkm_set(self.pkm, 'specialev', evs[3])
-            self.pkm = self.sav.pkm_set(self.pkm, 'speedev', evs[4])
-            self.pkm = self.sav.pkm_set(self.pkm, 'attackiv', ivs[1])
-            self.pkm = self.sav.pkm_set(self.pkm, 'defenseiv', ivs[2])
-            self.pkm = self.sav.pkm_set(self.pkm, 'specialiv', ivs[3])
-            self.pkm = self.sav.pkm_set(self.pkm, 'speediv', ivs[4])
 
-            iv_hp = ivs[1] / 2 % 2 * 8 + ivs[2] % 2 * 4 + ivs[4] % 2 * 2 + ivs[3] % 2
+            # Get IVs/EVs
+            if self.gen <= 2:
+                stats = ['HP', 'Atk', 'Def', 'SpA', 'Spe']
+                evs = [65535, 65535, 65535, 65535, 65535]
+                ivs = [15, 15, 15, 15, 15, 15]
+                for j in range(5):
+                    if pkmn['EVs'][stats[j]] != '' and int(pkmn['EVs'][stats[j]]) < 252:
+                        evs[j] = int(pkmn['EVs'][stats[j]]) ** 2
+                    if pkmn['IVs'][stats[j]] != '' and int(pkmn['IVs'][stats[j]]) < 31:
+                        ivs[j] = int(pkmn['IVs'][stats[j]]) / 2
+                self.pkm = self.sav.pkm_set(self.pkm, 'specialev', evs[3])
+                self.pkm = self.sav.pkm_set(self.pkm, 'specialiv', ivs[3])
+                iv_hp = ivs[1] / 2 % 2 * 8 + ivs[2] % 2 * 4 + ivs[4] % 2 * 2 + ivs[3] % 2
+            else:
+                stats = ['HP', 'Atk', 'Def', 'SpA', 'SpD', 'Spe']
+                evs = [0, 0, 0, 0, 0, 0]
+                ivs = [31, 31, 31, 31, 31, 31]
+                for j in range(6):
+                    if pkmn['EVs'][stats[j]] != '':
+                        evs[j] = int(pkmn['EVs'][stats[j]])
+                    if pkmn['IVs'][stats[j]] != '':
+                        ivs[j] = int(pkmn['IVs'][stats[j]])
 
-            self.pkm = self.sav.pkm_set(self.pkm, 'maxhp', int(10 + level * (base_hp[num] + iv_hp + 50) / 50 +
-                                                               (math.sqrt(evs[0]) / 4)))
-            self.pkm = self.sav.pkm_set(self.pkm, 'hp', int(10 + level * (base_hp[num] + iv_hp + 50) / 50 +
-                                                               (math.sqrt(evs[0]) / 4)))
-            self.pkm = self.sav.pkm_set(self.pkm, 'attack',
-                                        int(5 + level * (base_attack[num] + ivs[1]) / 50 + (math.sqrt(evs[1]) / 4)))
-            self.pkm = self.sav.pkm_set(self.pkm, 'defense',
-                                        int(5 + level * (base_defense[num] + ivs[2]) / 50 + (math.sqrt(evs[2]) / 4)))
-            self.pkm = self.sav.pkm_set(self.pkm, 'speed',
-                                        int(5 + level * (base_speed[num] + ivs[4]) / 50 + (math.sqrt(evs[4]) / 4)))
-            self.pkm = self.sav.pkm_set(self.pkm, 'specialattack',
-                                        int(5 + level * (base_specialattack[num] + ivs[3]) / 50 +
-                                            (math.sqrt(evs[3]) / 4)))
-            self.pkm = self.sav.pkm_set(self.pkm, 'specialdefense',
-                                        int(5 + level * (base_specialdefense[num] + ivs[3]) / 50 +
-                                            (math.sqrt(evs[3]) / 4)))
-            self.pkm = self.sav.pkm_set(self.pkm, 'special',
-                                        int(5 + level * (base_special[num] + ivs[3]) / 50 + (math.sqrt(evs[3]) / 4)))
+            # Set EVs/IVs
+            if self.gen <= 2:
+                iv_hp = ivs[1] / 2 % 2 * 8 + ivs[2] % 2 * 4 + ivs[4] % 2 * 2 + ivs[3] % 2
+                self.pkm = self.sav.pkm_set(self.pkm, 'maxhpev', evs[0])
+                self.pkm = self.sav.pkm_set(self.pkm, 'attackev', evs[1])
+                self.pkm = self.sav.pkm_set(self.pkm, 'defenseev', evs[2])
+                self.pkm = self.sav.pkm_set(self.pkm, 'specialev', evs[3])
+                self.pkm = self.sav.pkm_set(self.pkm, 'speedev', evs[4])
+                self.pkm = self.sav.pkm_set(self.pkm, 'attackiv', ivs[1])
+                self.pkm = self.sav.pkm_set(self.pkm, 'defenseiv', ivs[2])
+                self.pkm = self.sav.pkm_set(self.pkm, 'specialiv', ivs[3])
+                self.pkm = self.sav.pkm_set(self.pkm, 'speediv', ivs[4])
+            else:
+                self.pkm = self.sav.pkm_set(self.pkm, 'maxhpiv', ivs[0])
+                self.pkm = self.sav.pkm_set(self.pkm, 'attackiv', ivs[1])
+                self.pkm = self.sav.pkm_set(self.pkm, 'defenseiv', ivs[2])
+                self.pkm = self.sav.pkm_set(self.pkm, 'specialattackiv', ivs[3])
+                self.pkm = self.sav.pkm_set(self.pkm, 'specialdefenseiv', ivs[4])
+                self.pkm = self.sav.pkm_set(self.pkm, 'speediv', ivs[5])
+                self.pkm = self.sav.pkm_set(self.pkm, 'maxhpev', evs[0])
+                self.pkm = self.sav.pkm_set(self.pkm, 'attackev', evs[1])
+                self.pkm = self.sav.pkm_set(self.pkm, 'defenseev', evs[2])
+                self.pkm = self.sav.pkm_set(self.pkm, 'specialattackev', evs[3])
+                self.pkm = self.sav.pkm_set(self.pkm, 'specialdefenseev', evs[4])
+                self.pkm = self.sav.pkm_set(self.pkm, 'speedev', evs[5])
+
+
+            # Calc stats
+            if self.gen <= 2:
+                self.pkm = self.sav.pkm_set(self.pkm, 'maxhp', int(10 + level * (base_hp[num] + iv_hp + 50) / 50 +
+                                                                   (math.sqrt(evs[0]) / 4)))
+                self.pkm = self.sav.pkm_set(self.pkm, 'hp', int(10 + level * (base_hp[num] + iv_hp + 50) / 50 +
+                                                                   (math.sqrt(evs[0]) / 4)))
+                self.pkm = self.sav.pkm_set(self.pkm, 'attack',
+                                            int(5 + level * (base_attack[num] + ivs[1]) / 50 + (math.sqrt(evs[1]) / 4)))
+                self.pkm = self.sav.pkm_set(self.pkm, 'defense',
+                                            int(5 + level * (base_defense[num] + ivs[2]) / 50 + (math.sqrt(evs[2]) / 4)))
+                self.pkm = self.sav.pkm_set(self.pkm, 'speed',
+                                            int(5 + level * (base_speed[num] + ivs[4]) / 50 + (math.sqrt(evs[4]) / 4)))
+                self.pkm = self.sav.pkm_set(self.pkm, 'specialattack',
+                                            int(5 + level * (base_specialattack[num] + ivs[3]) / 50 +
+                                                (math.sqrt(evs[3]) / 4)))
+                self.pkm = self.sav.pkm_set(self.pkm, 'specialdefense',
+                                            int(5 + level * (base_specialdefense[num] + ivs[3]) / 50 +
+                                                (math.sqrt(evs[3]) / 4)))
+                self.pkm = self.sav.pkm_set(self.pkm, 'special',
+                                            int(5 + level * (base_special[num] + ivs[3]) / 50 + (math.sqrt(evs[3]) / 4)))
+            else:
+                hp = int((2 * base_hp[num] + ivs[0] + int(evs[0]/4)) * level / 100) + level + 10
+                atk = int((int(((2 * base_attack[num] + ivs[1] + int(evs[1]/4)) * level) / 100) + 5) * natures_atk[nature])
+                dfc = int((int((2 * base_defense[num] + ivs[2] + int(evs[2]/4)) * level / 100) + 5) * natures_def[nature])
+                spatk = int((int((2 * base_specialattack[num] + ivs[3] + int(evs[3]/4)) * level / 100) + 5) * natures_spatk[nature])
+                spdef = int((int((2 * base_specialdefense[num] + ivs[4] + int(evs[4]/4)) * level / 100) + 5) * natures_spdef[nature])
+                spe = int((int((2 * base_speed[num] + ivs[5] + int(evs[5]/4)) * level / 100) + 5) * natures_spe[nature])
+                self.pkm = self.sav.pkm_set(self.pkm, 'hp', hp)
+                self.pkm = self.sav.pkm_set(self.pkm, 'maxhp', hp)
+                self.pkm = self.sav.pkm_set(self.pkm, 'attack', atk)
+                self.pkm = self.sav.pkm_set(self.pkm, 'defense', dfc)
+                self.pkm = self.sav.pkm_set(self.pkm, 'specialattack', spatk)
+                self.pkm = self.sav.pkm_set(self.pkm, 'specialdefense', spdef)
+                self.pkm = self.sav.pkm_set(self.pkm, 'speed', spe)
 
             # Moves
             current_move = 0
             for j in range(len(pkmn['Moves'])):
                 current_move += 1
-                if self.gen == 2 and pkmn['Moves'][j].find('Hidden Power') != -1:
+                if self.gen >= 2 and pkmn['Moves'][j].find('Hidden Power') != -1:
                     self.pkm = self.sav.pkm_set(self.pkm, 'move%d' % current_move, 237)
                     self.pkm = self.sav.pkm_set(self.pkm, 'move%dppup' % current_move, 3)
                     self.pkm = self.sav.pkm_set(self.pkm, 'move%dpp' % current_move, move_pp[237] + 3 * move_pp[237] / 5)
@@ -8792,32 +11091,75 @@ class PikaSav():
                                     break
                             else:
                                 current_move -= 1
+                    else:
+                        for index in range(len(moves_rs)):
+                            if moves_rs[index].find(pkmn['Moves'][j]) != -1:
+                                self.pkm = self.sav.pkm_set(self.pkm, 'move%d' % current_move, index)
+                                self.pkm = self.sav.pkm_set(self.pkm, 'move%dppup' % current_move, 3)
+                                if move_pp[index] != 40:
+                                    self.pkm = self.sav.pkm_set(self.pkm, 'move%dpp' % current_move,
+                                                                move_pp[index] + 3 * move_pp[index] / 5)
+                                else:
+                                    self.pkm = self.sav.pkm_set(self.pkm, 'move%dpp' % current_move, 61)
+                                break
+                        else:
+                            for key in new2oldMoveNames_rs:
+                                if key.find(pkmn['Moves'][j]) != -1:
+                                    self.pkm = self.sav.pkm_set(self.pkm, 'move%d' % current_move,
+                                                                new2oldMoveNames_rs[key])
+                                    self.pkm = self.sav.pkm_set(self.pkm, 'move%dppup' % current_move, 3)
+                                    self.pkm = self.sav.pkm_set(self.pkm, 'move%dpp' % current_move,
+                                                                move_pp[new2oldMoveNames_rs[key]] +
+                                                                3 * move_pp[new2oldMoveNames_rs[key]] / 5)
+                                    break
+                            else:
+                                current_move -= 1
 
             while current_move < len(pkmn['Moves']):
                 current_move += 1
                 self.pkm = self.sav.pkm_set(self.pkm, 'move%d' % current_move, 0)
 
             # Item
-            for index in range(len(items_gs)):
-                if unicode(items_gs[index], 'utf-8').find(pkmn['Item']) != -1:
-                    self.pkm = self.sav.pkm_set(self.pkm, 'item', index)
-                    break
-            else:
-                self.pkm = self.sav.pkm_set(self.pkm, 'item', 0)
-
+            if self.gen == 2:
+                for index in range(len(items_gs)):
+                    if unicode(items_gs[index], 'utf-8').find(pkmn['Item']) != -1:
+                        self.pkm = self.sav.pkm_set(self.pkm, 'item', index)
+                        break
+                else:
+                    self.pkm = self.sav.pkm_set(self.pkm, 'item', 0)
+            elif self.gen == 3:
+                for index in range(len(items_rs)):
+                    if unicode(items_rs[index], 'utf-8').find(pkmn['Item']) != -1:
+                        self.pkm = self.sav.pkm_set(self.pkm, 'item', index)
+                        break
+                else:
+                    self.pkm = self.sav.pkm_set(self.pkm, 'item', 0)
             # Happiness
-            if pkmn['Happiness'] == "":
-                self.pkm = self.sav.pkm_set(self.pkm, 'happiness', 255)
-            else:
-                self.pkm = self.sav.pkm_set(self.pkm, 'happiness', int(pkmn['Happiness']))
+            if self.gen >= 2:
+                if pkmn['Happiness'] == "":
+                    self.pkm = self.sav.pkm_set(self.pkm, 'happiness', 255)
+                else:
+                    self.pkm = self.sav.pkm_set(self.pkm, 'happiness', int(pkmn['Happiness']))
 
             # Shenanigans
             if self.gen == 2:
                 self.pkm = self.sav.pkm_set(self.pkm, 'caughttime', 0)
                 self.pkm = self.sav.pkm_set(self.pkm, 'caughtzone', 0)
                 self.pkm = self.sav.pkm_set(self.pkm, 'caughtlevel', 0)
-            else:
+            elif self.gen == 1:
                 self.pkm = self.sav.pkm_set(self.pkm, 'catchrate', 0)
+            else:
+                self.pkm = self.sav.pkm_set(self.pkm, 'coolness', 0)
+                self.pkm = self.sav.pkm_set(self.pkm, 'beauty', 0)
+                self.pkm = self.sav.pkm_set(self.pkm, 'cuteness', 0)
+                self.pkm = self.sav.pkm_set(self.pkm, 'smartness', 0)
+                self.pkm = self.sav.pkm_set(self.pkm, 'toughness', 0)
+                self.pkm = self.sav.pkm_set(self.pkm, 'feel', 0)
+                self.pkm = self.sav.pkm_set(self.pkm, 'pokerus', 0)
+                self.pkm = self.sav.pkm_set(self.pkm, 'caughtlevel', 0)
+                self.pkm = self.sav.pkm_set(self.pkm, 'caughtball', 0)
+                self.pkm = self.sav.pkm_set(self.pkm, 'caughtlocation', 0)
+
 
             # Experience
             growth = growthrates[num]
@@ -8833,7 +11175,8 @@ class PikaSav():
 
         self.imp.destroy()
         self.wmdel_pokemon()
-        self.sav.set('pokemoncount', bin_pkm)
+        if self.gen <= 2:
+            self.sav.set('pokemoncount', bin_pkm)
 
         while bin_pkm != 6:
             self.pkm = self.sav.pokemon[bin_pkm]
@@ -8843,8 +11186,92 @@ class PikaSav():
             self.sav.setpokemon(bin_pkm, self.pkm)
             bin_pkm += 1
 
+
         self.sav.refresh()
         self.show_pokemon()
+
+    def on_pid_change(self, name, index, mode):
+        if self.pid.get() == '':
+            return
+        self.changingPid = True
+        pid = int(self.pidInt.get())
+        otnum = int(self.otnum.get())
+        secretid = int(self.secretid.get())
+        pkm = pokemon.index(self.pokeclass['selection'])
+        self.natureInt.set(natures[pid % 25])
+        pokemon_name = pokemon[pkm][:pokemon[pkm].find('(')-1]
+        for i in range(len(pokedex_rs)):
+            if pokedex_rs[i].find(pokemon_name) != -1:
+                dex_num = i
+                break
+        if isinstance(pokemon_abilities[dex_num], str):
+            self.ability.set(0)
+        else:
+            self.ability.set(pid % 2)
+        gen_rate = 127
+        for key in gender_rate:
+            if pkm == key:
+                gen_rate = gender_rate[key]
+        if gen_rate == 255 or (pid % 256) >= gen_rate:
+            self.gender.set(0)
+        else:
+            self.gender.set(1)
+        p1 = pid / 65536
+        p2 = pid % 65536
+        if (p1 ^ p2 ^ otnum ^ secretid) < 8:
+            self.shiny.set(0)
+        else:
+            self.shiny.set(1)
+        self.changingPid = False
+
+    def generate_pid(self, pkm, trainerid, secretid, nature=None, gender=None, ability=None, shiny=None):
+        pid = randint(0, 2 ** 32 - 1)
+        iterations = 0
+        gen_rate = 127
+        if pkm == 29:
+            gen_rate = 254
+        elif pkm == 32:
+            gen_rate = 0
+        else:
+            name = pokemon_lower_rs[pkm].capitalize()
+            for i in range(len(pokemon_rs)):
+                if pokemon_rs[i].find(name):
+                    mem_num = i
+                    break
+            else:
+                return
+            if pkm in gender_rate:
+                gen_rate = gender_rate[pkm]
+        if isinstance(pokemon_abilities[pkm], str):
+            skip_ability_check = True
+        else:
+            skip_ability_check = False
+        while True:
+            if (pid % 25 == nature or nature is None) and (pid % 2 == ability or ability is None or skip_ability_check):
+                if gen_rate >= 254 or gen_rate == 0 or (gender == 1 and ((pid % 256) < gen_rate)) or (gender == 0 and ((pid % 256) >= gen_rate)) or gender is None:
+                    if shiny == 1 or shiny is None:
+                        return pid
+                    else:
+                        p1 = pid / 65536
+                        p2 = pid % 65536
+                        if (p1 ^ p2 ^ trainerid ^ secretid) < 8:
+                            return pid
+            if iterations % 1000000 == 0:
+                pid = randint(0, 2 ** 32 - 1)
+            else:
+                pid += 1
+            iterations += 1
+            if pid >= (2 ** 32 - 1):
+                pid = 0
+
+    def adjust_pid(self, event = None):
+        if self.changingPid:
+            return
+        pid = self.generate_pid(self.sav.pkm_get(self.pkm, 'num'), int(self.otnum.get()), int(self.secretid.get()),
+                         natures.index(self.natureInt.get()), self.gender.get(), self.ability.get(), self.shiny.get())
+        self.pid.delete(0, END)
+        self.pid.insert(0, pid)
+        self.sav.pkm_set(self.pkm, 'pid', pid)
 
     def add_fields(self):
         self.frame.grid_forget()
@@ -9374,9 +11801,9 @@ class PikaSav():
             self.pokecount = Entry(self.pokemon, width=7)
             self.pokecount.insert(0, str(self.sav.pokemoncount))
             self.pokecount.grid(row=14, column=3)
-            Label(self.pokemon, text='', font=('Times', 4)).grid(row=15)
-            Button(self.pokemon, text='Import/Export', width=15, command=self.show_import).grid(row=16, column=0,
-                                                                                            columnspan=4)
+        Label(self.pokemon, text='', font=('Times', 4)).grid(row=15)
+        Button(self.pokemon, text='Import/Export', width=15, command=self.show_import).grid(row=16, column=0,
+                                                                                        columnspan=4)
 
     def show_boxes(self):
         if self.sav == None:
@@ -9476,6 +11903,7 @@ class PikaSav():
         self.imp = Toplevel()
         Label(self.imp, text='', font=('Times', 4)).grid(row=0)
         team = Text(self.imp, height=30, width=100, font=('Consolas', 10))
+        team.insert('1.0', self.get_pmkm_info())
         team.grid(row=1, columnspan=2)
         Label(self.imp, text='', font=('Times', 4)).grid(row=2)
         Button(self.imp, text='Save', width=10,
@@ -9502,8 +11930,7 @@ class PikaSav():
             self.pokeedit.focus_force()
             return
         self.pokeedit = Toplevel()
-        if self.gen <= 2:
-            self.add_pokeedit_menus()
+        self.add_pokeedit_menus()
         if b == None:
             pkm = self.sav.pokemon[p]
             self.pkm = pkm
@@ -9520,13 +11947,6 @@ class PikaSav():
         Label(self.pokeedit, text='   ').grid(row=1000, column=1000)
         self.pokeedit.protocol('WM_DELETE_WINDOW', self.wmdel_pokeedit)
         Label(self.pokeedit, text='    Pok\xc3\xa9mon Class:  ').grid(row=10, column=10, columnspan=10)
-        if self.gen <= 2:
-            Label(self.pokeedit, text='    Pok\xc3\xa9mon Sprite:  ').grid(row=20, column=10, columnspan=10)
-        else:
-            Label(self.pokeedit, text='    Personality / PID:  ').grid(row=20, column=10, columnspan=10, sticky=E)
-            self.pid = Entry(self.pokeedit, width=22)
-            self.pid.insert(0, self.sav.pkm_get(pkm, 'pid'))
-            self.pid.grid(row=20, column=20, columnspan=10)
         Label(self.pokeedit, text='    Nickname:  ').grid(row=25, column=10, columnspan=10)
         Label(self.pokeedit, text='    OT Num / OT Name:  ').grid(row=10, column=30, columnspan=10)
         Label(self.pokeedit, text='    Level / Exp. Points:  ').grid(row=20, column=30, columnspan=10)
@@ -9536,6 +11956,15 @@ class PikaSav():
         self.otname = Entry(self.pokeedit, width=10)
         self.otname.insert(0, self.sav.pkm_get(pkm, 'otname'))
         self.otname.grid(row=10, column=50, columnspan=10)
+        if self.gen <= 2:
+            Label(self.pokeedit, text='    Pok\xc3\xa9mon Sprite:  ').grid(row=20, column=10, columnspan=10)
+        else:
+            Label(self.pokeedit, text='    Personality / PID:  ').grid(row=20, column=10, columnspan=10, sticky=E)
+            self.pidInt = IntVar()
+            self.pidInt.set(self.sav.pkm_get(pkm, 'pid'))
+            self.pidInt.trace('w', lambda name, index, mode: self.on_pid_change(name, index, mode))
+            self.pid = Entry(self.pokeedit, width=22, textvariable=self.pidInt)
+            self.pid.grid(row=20, column=20, columnspan=10)
         if self.gen >= 2:
             Label(self.pokeedit, text='    Held Item:  ').grid(row=23, column=10, columnspan=10)
             self.helditem = ComboBox(self.pokeedit, dropdown=1, editable=1, width=20, value=items[self.sav.pkm_get(pkm, 'item')])
@@ -9632,7 +12061,7 @@ class PikaSav():
 
             self.type1.grid(row=28, column=20, columnspan=10, sticky=E)
             self.type2.grid(row=28, column=30, columnspan=10, sticky=E)
-        self.pokeclass = ComboBox(self.pokeedit, dropdown=1, editable=1, width=20, value=pokemon[self.sav.pkm_get(pkm, 'num')])
+        self.pokeclass = ComboBox(self.pokeedit, dropdown=1, editable=1, width=20, command= lambda event: self.on_class_change(event), value=pokemon[self.sav.pkm_get(pkm, 'num')])
         if self.gen <= 2:
             self.pokesprite = ComboBox(self.pokeedit, dropdown=1, editable=1, width=20, value=pokemon[self.sav.pkm_get(pkm, 'sprite')])
         array = pokemon * 1
@@ -9646,6 +12075,7 @@ class PikaSav():
         self.pokeclass.grid(row=10, column=20, columnspan=10)
         if self.gen <= 2:
             self.pokesprite.grid(row=20, column=20, columnspan=10)
+
         self.moveclass = [None] * 4
         self.movepp = [None] * 4
         self.moveppup = [None] * 4
@@ -9723,19 +12153,97 @@ class PikaSav():
              'smartness',
              'toughness',
              'feel']
+
+            self.changingPid = False
+            pid = self.pidInt.get()
+            self.natureInt = StringVar()
+            self.natureInt.set(natures[pid % 25])
+            self.gender = IntVar()
+            gen_rate = 127
+            for key in gender_rate:
+                if key == self.sav.pkm_get(pkm, 'num'):
+                    gen_rate = gender_rate[key]
+                    break
+            if gen_rate == 255 or (pid % 256) >= gen_rate:
+                self.gender.set(0)
+            else:
+                self.gender.set(1)
+
+            self.ability = IntVar()
+            self.shiny = IntVar()
+            p1 = pid / 65536
+            p2 = pid % 65536
+            if (p1 ^ p2 ^ self.sav.pkm_get(pkm, 'otnum') ^ self.sav.pkm_get(pkm, 'secretid')) < 8:
+                self.shiny.set(0)
+            else:
+                self.shiny.set(1)
             Label(self.pokeedit).grid(row=150)
-            Label(self.pokeedit, text='Contest values:   ').grid(row=170, column=10, columnspan=10, sticky=E)
-            Label(self.pokeedit, text='Coolness').grid(row=160, column=20, columnspan=5)
-            Label(self.pokeedit, text='Beauty').grid(row=160, column=25, columnspan=5)
-            Label(self.pokeedit, text='Cuteness').grid(row=160, column=30, columnspan=5)
-            Label(self.pokeedit, text='Smartness').grid(row=160, column=35, columnspan=5)
-            Label(self.pokeedit, text='Toughness').grid(row=160, column=40, columnspan=5)
-            Label(self.pokeedit, text='Feel').grid(row=160, column=45, columnspan=5)
+            Label(self.pokeedit, text='    Nature:  ').grid(row=160, column=10, columnspan=10)
+            self.nature = ComboBox(self.pokeedit, dropdown=1, editable=1,
+                                   command=lambda event: self.adjust_pid(event), variable=self.natureInt)
+            self.nature.grid(row=160, column=20, columnspan=10, sticky=E)
+            array = natures
+            pkmn = pokemon[self.sav.pkm_get(pkm, 'num')]
+            pkmn = pkmn[:pkmn.find('(') - 1]
+            try:
+                num = pokemon_lower_rs.index(pkmn.lower())
+                if isinstance(pokemon_abilities[num], str):
+                    self.ability.set(0)
+                    abilities = (pokemon_abilities[num], pokemon_abilities[num])
+                else:
+                    abilities = (pokemon_abilities[num][0], pokemon_abilities[num][1])
+                    self.ability.set(pid % 2)
+            except:
+                num = 0
+                abilities = (0, 0)
+            for i in range(len(array)):
+                self.nature.insert(END, array[i])
+            Label(self.pokeedit, text='   Gender:').grid(row=170, column=10, columnspan=10)
+
+            if self.sav.pkm_get(pkm, 'num') in gender_rate:
+                gr = gender_rate[self.sav.pkm_get(pkm, 'num')]
+            else:
+                gr = 127
+
+            if gr == 255:
+                Radiobutton(self.pokeedit, text='Genderless', variable=self.gender, value=0, command=self.adjust_pid)\
+             .grid(row=170, column=20, columnspan=2)
+            elif gr == 254:
+                Radiobutton(self.pokeedit, text='F', variable=self.gender, value=0, command=self.adjust_pid)\
+             .grid(row=170, column=20, columnspan=2)
+            elif gr == 0:
+                Radiobutton(self.pokeedit, text='M', variable=self.gender, value=0, command=self.adjust_pid)\
+             .grid(row=170, column=20, columnspan=2)
+            else:
+                Radiobutton(self.pokeedit, text='M', variable=self.gender, value=0, command=self.adjust_pid)\
+                 .grid(row=170, column=20, columnspan=2)
+                Radiobutton(self.pokeedit, text='F', variable=self.gender, value=1, command=self.adjust_pid)\
+                 .grid(row=170, column=22, columnspan=2)
+            Label(self.pokeedit, text=' Ability:').grid(row=170, column=35, columnspan=5)
+            Radiobutton(self.pokeedit, text=abilities[0], variable=self.ability, value=0, command=self.adjust_pid)\
+             .grid(row=170, column=40, sticky=W)
+            if num == 0 or not isinstance(pokemon_abilities[num], str):
+                Radiobutton(self.pokeedit, text=abilities[1], variable=self.ability, value=1, command=self.adjust_pid)\
+             .grid(row=170, column=45, sticky=W)
+            Label(self.pokeedit, text='  Shiny:').grid(row=160, column=35, columnspan=5)
+            Radiobutton(self.pokeedit, text='Yes', variable=self.shiny, value=0, command=self.adjust_pid)\
+             .grid(row=160, column=40, sticky=W)
+            Radiobutton(self.pokeedit, text='No', variable=self.shiny, value=1, command=self.adjust_pid)\
+             .grid(row=160, column=45, sticky=W)
+
+            Label(self.pokeedit).grid(row=180)
+            Label(self.pokeedit, text='Contest values:   ').grid(row=200, column=10, columnspan=10, sticky=E)
+            Label(self.pokeedit, text='Coolness').grid(row=190, column=20, columnspan=5)
+            Label(self.pokeedit, text='Beauty').grid(row=190, column=25, columnspan=5)
+            Label(self.pokeedit, text='Cuteness').grid(row=190, column=30, columnspan=5)
+            Label(self.pokeedit, text='Smartness').grid(row=190, column=35, columnspan=5)
+            Label(self.pokeedit, text='Toughness').grid(row=190, column=40, columnspan=5)
+            Label(self.pokeedit, text='Feel').grid(row=190, column=45, columnspan=5)
             scol = 20
             for s in range(len(cnames)):
                 self.constat[s] = Entry(self.pokeedit, width=6)
                 self.constat[s].insert(0, self.sav.pkm_get(pkm, '%s' % cnames[s]))
-                self.constat[s].grid(row=170, column=scol, columnspan=5)
+                self.constat[s].grid(row=200, column=scol, columnspan=5)
                 scol += 5
 
     def show_pokedex1(self):
@@ -9830,6 +12338,15 @@ class PikaSav():
             showinfo('SAV Info', 'There is no .sav file loaded.')
         else:
             showinfo('SAV Info', 'Handler: %s\n- Sav filesize: %d\n- %d bytes loaded' % (self.sav.version, os.path.getsize(self.sav.file), len(self.sav.buffer)))
+
+    def on_class_change(self, event):
+        if self.gen == 3:
+            try:
+                self.reload_pkm()
+            except AttributeError:
+                return
+            except TclError:
+                return
 
 
 pikasav = PikaSav()
