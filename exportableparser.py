@@ -101,7 +101,7 @@ def parse_first_line(line):
         if i != -1:
             first_line['Pokemon'] = line[:i - 1]
         else:
-            first_line['Pokemon'] = line
+            first_line['Pokemon'] = line.replace(' ', '')
 
     if i != -1:
         first_line['Item'] = line[i + 2:-2]
@@ -200,6 +200,15 @@ def parse_pokemon(pokemon):
         ret['IVs']['Spe'] = ''
 
     return ret
+
+
+def empty_evs(evs):
+    stats = ['HP', 'Atk', 'Def', 'SpA', 'Spe']
+    for i in range(len(stats)):
+        if evs[stats[i]] != '':
+            return False
+    else:
+        return True
 
 
 def parse_exportable(exportable):

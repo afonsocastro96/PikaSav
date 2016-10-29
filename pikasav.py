@@ -10824,7 +10824,6 @@ class PikaSav():
 
         return create_exportable(pokemons)
 
-
     def save_pkm(self):
         file = asksaveasfilename(filetypes=[('PKM File', '.pkm')])
         if not file:
@@ -10901,6 +10900,7 @@ class PikaSav():
             else:
                 nickname = pkmn['Nickname']
             self.pkm = self.sav.pkm_set(self.pkm, 'name', nickname)
+            self.pkm = self.sav.pkm_set(self.pkm, 'sprite', num)
             self.pkm = self.sav.pkm_set(self.pkm, 'num', num)
 
             if self.gen != 2:
@@ -10953,10 +10953,13 @@ class PikaSav():
             # Get IVs/EVs
             if self.gen <= 2:
                 stats = ['HP', 'Atk', 'Def', 'SpA', 'Spe']
-                evs = [65535, 65535, 65535, 65535, 65535]
+                if empty_evs(pkmn['EVs']):
+                    evs = [65535, 65535, 65535, 65535, 65535]
+                else:
+                    evs = [0, 0, 0, 0, 0]
                 ivs = [15, 15, 15, 15, 15, 15]
                 for j in range(5):
-                    if pkmn['EVs'][stats[j]] != '' and int(pkmn['EVs'][stats[j]]) < 252:
+                    if pkmn['EVs'][stats[j]] != '':
                         evs[j] = int(pkmn['EVs'][stats[j]]) ** 2
                     if pkmn['IVs'][stats[j]] != '' and int(pkmn['IVs'][stats[j]]) < 31:
                         ivs[j] = int(pkmn['IVs'][stats[j]]) / 2
@@ -10998,7 +11001,6 @@ class PikaSav():
                 self.pkm = self.sav.pkm_set(self.pkm, 'specialattackev', evs[3])
                 self.pkm = self.sav.pkm_set(self.pkm, 'specialdefenseev', evs[4])
                 self.pkm = self.sav.pkm_set(self.pkm, 'speedev', evs[5])
-
 
             # Calc stats
             if self.gen <= 2:
@@ -11160,7 +11162,6 @@ class PikaSav():
                 self.pkm = self.sav.pkm_set(self.pkm, 'caughtball', 0)
                 self.pkm = self.sav.pkm_set(self.pkm, 'caughtlocation', 0)
 
-
             # Experience
             growth = growthrates[num]
             exp = int(level ** 3)
@@ -11185,7 +11186,6 @@ class PikaSav():
             self.pkm = self.sav.pkm_set(self.pkm, 'sprite', 255)
             self.sav.setpokemon(bin_pkm, self.pkm)
             bin_pkm += 1
-
 
         self.sav.refresh()
         self.show_pokemon()
