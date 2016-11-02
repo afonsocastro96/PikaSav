@@ -18,7 +18,7 @@ def validate_input(exportable):
                            'Docile|Gentle|Hardy|Hasty|Impish|Jolly|Lax|Lonely|Mild|Modest|Naive|Naughty|Quiet|Quirky|' \
                            'Rash|Relaxed|Sassy|Serious|Timid) Nature[ ]*\n)?' \
                            '(IVs: (\d{1,2} (HP|Atk|Def|SpA|SpD|Spe) \/ ){0,5}(\d{1,3} ' \
-                           '(HP|Atk|Def|SpA|SpD|Spe))[ ]*\n)?(- [\w \[\]-]{3,15}[ ]*\n?){1,4}[\n]*){1,6}){2,21}$'
+                           '(HP|Atk|Def|SpA|SpD|Spe))[ ]*\n)?(- [\w \[\]-]{3,25}[ ]*\n?){1,4}[\n]*){1,6}){2,21}$'
 
     match = re.match(regex, exportable, 0)
     if not match:
