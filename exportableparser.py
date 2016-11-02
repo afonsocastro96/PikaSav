@@ -2,16 +2,31 @@ import re
 
 
 def validate_input(exportable):
-    regex = '^([\w -\'.,()?!/:;\[\]]{1,10}( \([\w -\'.,()?!/:;\[\]]{1,10}\))?( \((M|F)\))?( @ [\w -.]{1,20})?[ ]*\n' \
+    regex = '^([\w \-\'.,()?!/:;\[\]]{1,10}( \([\w \-\'.,()?!/:;\[\]]{1,10}\))?( \((M|F)\))?( @ [\w \-.]{1,20})?[ ]*\n'\
             'Ability: ([\w ]{1,20})?[ ]*\n(Level: \d{1,3}[ ]*\n)?(Shiny: (Yes|No)[ ]*\n)?(Happiness: \d{1,3}[ ]*\n)?' \
             '(EVs: (\d{1,3} (HP|Atk|Def|SpA|SpD|Spe) \/ ){0,5}(\d{1,3} (HP|Atk|Def|SpA|SpD|Spe))[ ]*\n)?' \
             '((Adamant|Bashful|Bold|Brave|Calm|Careful|Docile|Gentle|Hardy|Hasty|Impish|Jolly|Lax|Lonely|Mild|Modest|' \
             'Naive|Naughty|Quiet|Quirky|Rash|Relaxed|Sassy|Serious|Timid) Nature[ ]*\n)?' \
             '(IVs: (\d{1,2} (HP|Atk|Def|SpA|SpD|Spe) \/ ){0,5}(\d{1,3} (HP|Atk|Def|SpA|SpD|Spe))[ ]*\n)?' \
-            '(- [\w \[\]-]{3,20}[ ]*\n?){1,4}[\n]*){1,6}$'
+            '(- [\w \[\]-]{3,25}[ ]*\n?){1,4}[\n]*){1,6}$'
+
+    multiple_teams_regex = '^(((=== .{1,100} ===)\n*)([\w \-\'.,()?!/:;\[\]]{1,10}( \([\w \-\'.,()?!/:;\[\]]{1,10}\))?'\
+                           '( \((M|F)\))?( @ [\w \-.]{1,20})?[ ]*\nAbility: ([\w ]{1,20})?[ ]*\n' \
+                           '(Level: \d{1,3}[ ]*\n)?(Shiny: (Yes|No)[ ]*\n)?(Happiness: \d{1,3}[ ]*\n)?' \
+                           '(EVs: (\d{1,3} (HP|Atk|Def|SpA|SpD|Spe) \/ ){0,5}' \
+                           '(\d{1,3} (HP|Atk|Def|SpA|SpD|Spe))[ ]*\n)?((Adamant|Bashful|Bold|Brave|Calm|Careful|' \
+                           'Docile|Gentle|Hardy|Hasty|Impish|Jolly|Lax|Lonely|Mild|Modest|Naive|Naughty|Quiet|Quirky|' \
+                           'Rash|Relaxed|Sassy|Serious|Timid) Nature[ ]*\n)?' \
+                           '(IVs: (\d{1,2} (HP|Atk|Def|SpA|SpD|Spe) \/ ){0,5}(\d{1,3} ' \
+                           '(HP|Atk|Def|SpA|SpD|Spe))[ ]*\n)?(- [\w \[\]-]{3,15}[ ]*\n?){1,4}[\n]*){1,6}){2,21}$'
 
     match = re.match(regex, exportable, 0)
-    return match
+    if not match:
+        match = re.match(multiple_teams_regex, exportable, 0)
+        if match:
+            return 'multiple_teams'
+        return False
+    return 'single_team'
 
 
 def create_exportable(pokemons):
@@ -211,11 +226,39 @@ def empty_evs(evs):
         return True
 
 
+def get_teams(lines):
+    teams = []
+    name = ''
+    pokemons = []
+    for line in lines:
+        if '===' in line:
+            if name != '':
+                teams.append({'name': name, 'pokemons': list(pokemons)})
+                pokemons = []
+            beg = line.find('=')+4
+            name = line[beg:line.find('=', beg)-1]
+        else:
+            pokemons.append(line)
+    teams.append({'name': name, 'pokemons': list(pokemons)})
+    return teams
+
+
 def parse_exportable(exportable):
     exportable += '\n\n'
-    if validate_input(exportable):
-        ret = []
+    v = validate_input(exportable)
+    team = []
+    ret = {}
+    if v == 'single_team':
         for pokemon in get_pokemons(get_lines(exportable)):
-            ret.append(parse_pokemon(pokemon))
+            team.append(parse_pokemon(pokemon))
+        ret['untitled'] = team
+        return ret
+    elif v == 'multiple_teams':
+        teams = get_teams(get_lines(exportable))
+        for t in teams:
+            for pokemon in get_pokemons(t['pokemons']):
+                team.append(parse_pokemon(pokemon))
+            ret[t['name']] = team
+            team = []
         return ret
     return False

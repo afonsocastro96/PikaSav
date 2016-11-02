@@ -238,12 +238,12 @@ class RBSav:
             pkm = self.buffer[off_hex]
             pkm += self.buffer[off_otname:off_otname + 11]
             pkm += self.buffer[off_name:off_name + 11]
-            pkm += self.buffer[off_data:off_data + 33]
+            pkm += self.buffer[off_data:off_data + 44]
             return pkm
         self.setbyte(off_hex, ord(data[0]))
         self.buffer = self.buffer[0:off_otname] + data[1:12] + self.buffer[off_otname + 11:]
         self.buffer = self.buffer[0:off_name] + data[12:23] + self.buffer[off_name + 11:]
-        self.buffer = self.buffer[0:off_data] + data[23:67] + self.buffer[off_data + 33:]
+        self.buffer = self.buffer[0:off_data] + data[23:67] + self.buffer[off_data + 44:]
 
     def pkm_get(self, pkm, var):
         if var == 'sprite':
