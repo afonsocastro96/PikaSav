@@ -556,7 +556,7 @@ class RSSav:
         if var == 'caughtlocation':
             return self.pkm_sget(pkm, 3, 1)
         if var == 'caughtlevel':
-            return self.pkm_sget(pkm, 3, 2)
+            return self.pkm_sget(pkm, 3, 2) & 127
         if var == 'caughtball':
             return self.pkm_sget(pkm, 3, 3) >> 3 & 15
         if var == 'otgender':
