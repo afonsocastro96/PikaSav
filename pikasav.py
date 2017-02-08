@@ -10322,6 +10322,24 @@ class PikaSav():
         self.adjust_stats()
         self.reload_pkm()
 
+    def swap_pkm(self, p, box=None):
+        if not hasattr(self, 'swap'):
+            self.swap = p
+        else:
+            if box is None:
+                pkm = self.sav.pokemon[p]
+                self.sav.setpokemon(p, self.sav.pokemon[self.swap])
+                self.sav.setpokemon(self.swap, pkm)
+                self.wmdel_pokemon()
+                self.show_pokemon()
+            else:
+                pkm = self.sav.pcpokemon[box * self.bp + p]
+                self.sav.setpcpokemon(p, self.sav.pcpokemon[box * self.bp + self.swap])
+                self.sav.setpcpokemon(box * self.bp + self.swap, pkm)
+                del self.swap
+                self.wmdel_boxedit()
+                self.show_boxedit(box)
+
     def delete_pkm(self, index, box = None):
         if box is None:
             for i in xrange(index + 1, 6):
@@ -11869,11 +11887,15 @@ class PikaSav():
         self.pokeedit = None
 
     def wmdel_pokemon(self):
+        if hasattr(self, 'swap'):
+            del self.swap
         self.store_pokemon()
         self.pokemon.destroy()
         self.pokemon = None
 
     def wmdel_boxedit(self):
+        if hasattr(self, 'swap'):
+            del self.swap
         self.store_boxedit()
         self.boxedit.destroy()
         if self.boxes != None:
@@ -11901,7 +11923,7 @@ class PikaSav():
             Label(self.pokemon, text=pokemon[pclass] + '    ').grid(row=p * 2 + 2, column=2, sticky=W)
             Button(self.pokemon, text='Edit', width=6, command=lambda p=p: self.show_pokeedit(p)).grid(row=p * 2 + 2,
                                                                                                        column=3)
-            Button(self.pokemon, text='Swap', width=6, command=lambda p=p: self.show_pokeedit(p)).grid(row=p * 2 + 2,
+            Button(self.pokemon, text='Swap', width=6, command=lambda p=p: self.swap_pkm(p)).grid(row=p * 2 + 2,
                                                                                                        column=4)
             Button(self.pokemon, text='Delete', width=6, command=lambda p=p: self.delete_pkm(p)).grid(row=p * 2 + 2,
                                                                                                        column=5)
@@ -11931,7 +11953,6 @@ class PikaSav():
         if self.gen <= 2:
             Label(self.pokemon, text='', font=('Times', 4)).grid(row=15)
             Button(self.pokemon, text='Import/Export', width=15, command=self.show_import).grid(row=14, column=6)
-
 
     def show_boxes(self):
         if self.sav == None:
@@ -11991,7 +12012,7 @@ class PikaSav():
             Label(self.boxedit, text=text + '    ').grid(row=p * 2 + 2, column=2, sticky=W)
             Button(self.boxedit, text='Edit', width=6, command=lambda p=p: self.show_pokeedit(p, b)).grid(row=p * 2 + 2,
                                                                                                           column=3)
-            Button(self.boxedit, text='Swap', width=6, command=lambda p=p: self.show_pokeedit(p)).grid(row=p * 2 + 2,
+            Button(self.boxedit, text='Swap', width=6, command=lambda p=p: self.swap_pkm(p, b)).grid(row=p * 2 + 2,
                                                                                                        column=4)
 
             Button(self.boxedit, text='Delete', width=6, command=lambda p=p: self.delete_pkm(p, b)).grid(row=p * 2 + 2,
