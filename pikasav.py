@@ -11956,7 +11956,7 @@ class PikaSav():
             Label(self.pokemon, text=pokemon[pclass] + '    ').grid(row=p * 2 + 2, column=2, sticky=W)
             Button(self.pokemon, text='Edit', width=6, command=lambda p=p: self.show_pokeedit(p)).grid(row=p * 2 + 2,
                                                                                                        column=3)
-            swap = Button(self.pokemon, text='Swap', width=6, command=lambda p=p:self.swap_pkm(p)).grid(row=p * 2 + 2,
+            Button(self.pokemon, text='Swap', width=6, command=lambda p=p:self.swap_pkm(p)).grid(row=p * 2 + 2,
                                                                                                        column=4)
             Button(self.pokemon, text='Delete', width=6, command=lambda p=p: self.delete_pkm(p)).grid(row=p * 2 + 2,
                                                                                                        column=5)
@@ -12069,6 +12069,9 @@ class PikaSav():
                     move.insert(END, 'Box ' + str(x + 1))
             move.pick(0)
             move.grid(row=p * 2 + 2, column=6, sticky=Tkinter.W)
+            Button(self.boxedit, text='Move', width=6, command=lambda p=p: self.move_pkm(p, move['selection'], b)).grid(
+                row=p * 2 + 2,
+                column=7)
 
             if self.gen <= 2:
                 Label(self.boxedit, text='', font=('Times', 4)).grid(row=self.bp * 2 + 1)
