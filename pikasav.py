@@ -10322,6 +10322,30 @@ class PikaSav():
         self.adjust_stats()
         self.reload_pkm()
 
+    def move_pkm(self, p, destination, box=None):
+        if box is None:
+            destination = int(parse('Box {}', destination).fixed[0]) - 1
+            self.sav.setpcpokemon(destination * self.bp + self.sav.boxpokemoncount[destination], self.sav.pokemon[p])
+            self.sav.boxpokemoncount[destination] += 1
+            self.sav.set('box' + str(destination) + 'pokemoncount', self.sav.boxpokemoncount[destination])
+            self.delete_pkm(p)
+            self.wmdel_pokemon()
+            self.show_pokemon()
+        else:
+            if destination == 'Party':
+                self.sav.setpokemon(self.sav.pokemoncount, self.sav.pcpokemon[destination * self.bp + p])
+                self.sav.pokemoncount += 1
+                self.sav.set('pokemoncount', self.sav.pokemoncount)
+                self.delete_pkm(p, box)
+            else:
+                destination = int(parse('Box {}', destination).fixed[0]) - 1
+                self.sav.setpcpokemon(destination * self.bp + self.sav.boxpokemoncount[destination], self.sav.pcpokemon[box * self.bp + p])
+                self.sav.boxpokemoncount[destination] += 1
+                self.sav.set('box' + str(destination) + 'pokemoncount', self.sav.boxpokemoncount[destination])
+                self.delete_pkm(p, box)
+            self.wmdel_boxedit()
+            self.show_boxedit(box)
+
     def swap_pkm(self, p, box=None):
         if not hasattr(self, 'swap'):
             self.swap = p
@@ -10340,7 +10364,7 @@ class PikaSav():
                 self.wmdel_boxedit()
                 self.show_boxedit(box)
 
-    def delete_pkm(self, index, box = None):
+    def delete_pkm(self, index, box=None):
         if box is None:
             for i in xrange(index + 1, 6):
                 self.sav.setpokemon(i-1, self.sav.pokemon[i])
@@ -10349,6 +10373,11 @@ class PikaSav():
                 self.sav.set('pokemoncount', self.sav.pokemoncount)
                 self.pokecount.delete(0, END)
                 self.pokecount.insert(0, self.sav.pokemoncount)
+            pkm = self.sav.pokemon[0]
+            pkm = chr(0) * len(pkm)
+            pkm = self.sav.pkm_set(pkm, 'num', 255)
+            pkm = self.sav.pkm_set(pkm, 'sprite', 255)
+            self.sav.setpokemon(5, pkm)
             self.wmdel_pokemon()
             self.show_pokemon()
         else:
@@ -10357,9 +10386,13 @@ class PikaSav():
             if self.gen <= 2:
                 self.boxpokecount.delete(0, END)
                 self.boxpokecount.insert(0, str(self.sav.boxpokemoncount[box]-1))
+            pkm = self.sav.pokemon[0]
+            pkm = chr(0) * len(pkm)
+            pkm = self.sav.pkm_set(pkm, 'num', 255)
+            pkm = self.sav.pkm_set(pkm, 'sprite', 255)
+            self.sav.setpcpokemon(box * self.bp + (self.bp-1), pkm)
             self.wmdel_boxedit()
             self.show_boxedit(box)
-
 
     def scratch_pkm(self):
         if askyesno('About to delete this .PKM', 'Do you really want to delete this Pokemon?', parent=self.pokeedit):
@@ -11923,7 +11956,7 @@ class PikaSav():
             Label(self.pokemon, text=pokemon[pclass] + '    ').grid(row=p * 2 + 2, column=2, sticky=W)
             Button(self.pokemon, text='Edit', width=6, command=lambda p=p: self.show_pokeedit(p)).grid(row=p * 2 + 2,
                                                                                                        column=3)
-            Button(self.pokemon, text='Swap', width=6, command=lambda p=p: self.swap_pkm(p)).grid(row=p * 2 + 2,
+            swap = Button(self.pokemon, text='Swap', width=6, command=lambda p=p:self.swap_pkm(p)).grid(row=p * 2 + 2,
                                                                                                        column=4)
             Button(self.pokemon, text='Delete', width=6, command=lambda p=p: self.delete_pkm(p)).grid(row=p * 2 + 2,
                                                                                                        column=5)
@@ -11936,12 +11969,14 @@ class PikaSav():
             else:
                 box_no = 14
                 box_size = 30
-            move = ComboBox(self.pokemon, label='Move: ', dropdown=1, editable=0, width=20, value='Party')
-            move.insert(END, 'Party')
+            move = ComboBox(self.pokemon, label='Move: ', dropdown=1, editable=0, width=20)
             for x in range(0, box_no):
                 if self.sav.boxpokemoncount[x] < box_size:
                     move.insert(END, 'Box ' + str(x+1))
+            move.pick(0)
             move.grid(row=p * 2 + 2, column=6, sticky=Tkinter.W)
+            Button(self.pokemon, text='Move', width=6, command=lambda p=p: self.move_pkm(p, move['selection'])).grid(row=p * 2 + 2,
+                                                                                                      column=7)
 
         if self.gen <= 2:
             Label(self.pokemon, text='', font=('Times', 4)).grid(row=13)
@@ -12026,11 +12061,13 @@ class PikaSav():
             else:
                 box_no = 14
                 box_size = 30
-            move = ComboBox(self.boxedit, label='Move: ', dropdown=1, editable=0, width=20, value='Party')
-            move.insert(END, 'Party')
+            move = ComboBox(self.boxedit, label='Move: ', dropdown=1, editable=0, width=20)
+            if self.sav.pokemoncount < 6:
+                move.insert(END, 'Party')
             for x in range(0, box_no):
-                if self.sav.boxpokemoncount[x] < box_size:
+                if self.sav.boxpokemoncount[x] < box_size and x != b:
                     move.insert(END, 'Box ' + str(x + 1))
+            move.pick(0)
             move.grid(row=p * 2 + 2, column=6, sticky=Tkinter.W)
 
             if self.gen <= 2:
